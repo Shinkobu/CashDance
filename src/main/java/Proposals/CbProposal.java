@@ -81,8 +81,7 @@ public class CbProposal {
 
     }
 
-    public CbProposal(String name, Card card, Date startDate, Date endDate, HashMap<CbCategory, Double> categoryMap, String userComment) {
-        this.name = name;
+    public CbProposal(Card card, Date startDate, Date endDate, HashMap<CbCategory, Double> categoryMap, String userComment) {
         this.card = card;
         this.startDate = startDate;
         this.endDate = endDate;

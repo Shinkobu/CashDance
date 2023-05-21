@@ -5,15 +5,20 @@ import java.util.Date;
 public class Card {
     private String name;
     private String bankName;
-    private CreditStatus creditStatus;
-    private PlasticStatus plasticStatus;
     private Date expireDate;
+    private int indexInDb;
 
-    public Card(String name, String bankName, CreditStatus creditStatus, PlasticStatus plasticStatus) {
+    public int getIndexInDb() {
+        return indexInDb;
+    }
+
+    public void setIndexInDb(int indexInDb) {
+        this.indexInDb = indexInDb;
+    }
+
+    public Card(String name, String bankName) {
         this.name = name;
         this.bankName = bankName;
-        this.creditStatus = creditStatus;
-        this.plasticStatus = plasticStatus;
     }
 
     @Override
@@ -21,8 +26,6 @@ public class Card {
         return "Card{" +
                 "name='" + name + '\'' +
                 ", bankName='" + bankName + '\'' +
-                ", creditStatus=" + creditStatus +
-                ", plasticStatus=" + plasticStatus +
                 ", expireDate=" + expireDate +
                 '}';
     }
@@ -43,19 +46,6 @@ public class Card {
         this.bankName = bankName;
     }
 
-    public CreditStatus getCreditStatus() {
-        return creditStatus;
-    }
 
-    public void setCreditStatus(CreditStatus creditStatus) {
-        this.creditStatus = creditStatus;
-    }
 
-    public PlasticStatus getPlasticStatus() {
-        return plasticStatus;
-    }
-
-    public void setPlasticStatus(PlasticStatus plasticStatus) {
-        this.plasticStatus = plasticStatus;
-    }
 }

@@ -22,12 +22,13 @@ todo
 
 import Proposals.*;
 
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.HashMap;
 
 public class App {
-    public static void main(String[] args) throws ParseException {
+    public static void main(String[] args) throws ParseException, IOException {
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
 
@@ -38,11 +39,15 @@ public class App {
         CbCategory cat5 = new CbCategory("Appliances", "Бытовая техника");
         CbCategory cat6 = new CbCategory("ALL", "На всё");
 
-        Card card1 = new Card("Карта Сбера", "Сбербанк", CreditStatus.DEBIT, PlasticStatus.PLASTIC);
-        Card card2 = new Card("Карта Альфы", "Альфабанк", CreditStatus.DEBIT, PlasticStatus.PLASTIC);
-        Card card3 = new Card("Карта Тинькофф", "Тинькофф", CreditStatus.CREDIT, PlasticStatus.PLASTIC);
-        Card card4 = new Card("Карта Сбера вирт", "Сбербанк", CreditStatus.DEBIT, PlasticStatus.VIRTUAL);
+        Card card1 = new Card("Карта Сбера", "Сбербанк");
+        Card card2 = new Card("Карта Альфы", "Альфабанк");
+        Card card3 = new Card("Карта Тинькофф", "Тинькофф");
+        Card card4 = new Card("Карта Сбера вирт", "Сбербанк");
 
+        Repository.addNewCard(card1);
+        Repository.addNewCard(card2);
+        Repository.addNewCard(card3);
+        Repository.addNewCard(card4);
 
         HashMap <CbCategory, Double> hashMap1 = new HashMap<>();
         hashMap1.put(cat1, 0.01);
@@ -55,15 +60,17 @@ public class App {
         hashMap2.put(cat5, 0.04);
 
 
-        CbProposal proposal1 = new CbProposal("Name1", card1, dateFormat.parse("01-01-2012"),
+        CbProposal proposal1 = new CbProposal(card1, dateFormat.parse("01-01-2012"),
                 dateFormat.parse("01-01-2012"), hashMap1, "тестовая позиция 1");
 
-        CbProposal proposal2 = new CbProposal("Name2", card2, dateFormat.parse("01-01-2012"),
+        CbProposal proposal2 = new CbProposal(card2, dateFormat.parse("01-01-2012"),
                 dateFormat.parse("01-01-2012"), hashMap2, "тестовая позиция 2");
 
         Database.addCbProposal(proposal1);
         Database.addCbProposal(proposal2);
-        Database.showDB();
+//        Database.showDB();
+
+        Controller.run();
     }
 
 
