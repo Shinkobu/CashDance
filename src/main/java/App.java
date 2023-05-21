@@ -20,9 +20,50 @@ todo
 
  */
 
-public class App {
-    public static void main(String[] args) {
+import Proposals.*;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.HashMap;
+
+public class App {
+    public static void main(String[] args) throws ParseException {
+
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+
+        CbCategory cat1 = new CbCategory("Pharmacy", "Аптеки");
+        CbCategory cat2 = new CbCategory("GasStation", "АЗС");
+        CbCategory cat3 = new CbCategory("Tourism", "Путешествия");
+        CbCategory cat4 = new CbCategory("Markets", "Продукты");
+        CbCategory cat5 = new CbCategory("Appliances", "Бытовая техника");
+        CbCategory cat6 = new CbCategory("ALL", "На всё");
+
+        Card card1 = new Card("Карта Сбера", "Сбербанк", CreditStatus.DEBIT, PlasticStatus.PLASTIC);
+        Card card2 = new Card("Карта Альфы", "Альфабанк", CreditStatus.DEBIT, PlasticStatus.PLASTIC);
+        Card card3 = new Card("Карта Тинькофф", "Тинькофф", CreditStatus.CREDIT, PlasticStatus.PLASTIC);
+        Card card4 = new Card("Карта Сбера вирт", "Сбербанк", CreditStatus.DEBIT, PlasticStatus.VIRTUAL);
+
+
+        HashMap <CbCategory, Double> hashMap1 = new HashMap<>();
+        hashMap1.put(cat1, 0.01);
+        hashMap1.put(cat2, 0.05);
+        hashMap1.put(cat3, 0.07);
+
+        HashMap <CbCategory, Double> hashMap2 = new HashMap<>();
+        hashMap2.put(cat3, 0.15);
+        hashMap2.put(cat4, 0.01);
+        hashMap2.put(cat5, 0.04);
+
+
+        CbProposal proposal1 = new CbProposal("Name1", card1, dateFormat.parse("01-01-2012"),
+                dateFormat.parse("01-01-2012"), hashMap1, "тестовая позиция 1");
+
+        CbProposal proposal2 = new CbProposal("Name2", card2, dateFormat.parse("01-01-2012"),
+                dateFormat.parse("01-01-2012"), hashMap2, "тестовая позиция 2");
+
+        Database.addCbProposal(proposal1);
+        Database.addCbProposal(proposal2);
+        Database.showDB();
     }
 
 

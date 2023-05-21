@@ -11,7 +11,7 @@ public class CbProposal {
     private Card card;
     private Date startDate;
     private Date endDate;
-    private HashMap<CbCategory,Float> categoryMap = new HashMap<>();
+    private HashMap<CbCategory,Double> categoryMap = new HashMap<>();
     private String userComment;
     private int indexInDb;
     public int getIndexInDb() {
@@ -55,11 +55,11 @@ public class CbProposal {
         this.endDate = endDate;
     }
 
-    public HashMap<CbCategory, Float> getCategoryMap() {
+    public HashMap<CbCategory, Double> getCategoryMap() {
         return categoryMap;
     }
 
-    public void setCategoryMap(HashMap<CbCategory, Float> categoryMap) {
+    public void setCategoryMap(HashMap<CbCategory, Double> categoryMap) {
         this.categoryMap = categoryMap;
     }
 
@@ -71,14 +71,26 @@ public class CbProposal {
         this.userComment = userComment;
     }
 
-//    public String toString() {
-//        return "Вид "+ getClassName() + ", кличка " + name + ", дата рождения: " + dateFormat.format(startDate);
-//    }
 
+    @Override
+    public String toString() {
+        return "Кешбек категории - " + card.getName()+": \n"+
+                "Категории действуют с " + startDate +"\n"+
+                "Категории действуют до " + endDate + "\n" +
+                categoryMap.toString();
 
+    }
 
+    public CbProposal(String name, Card card, Date startDate, Date endDate, HashMap<CbCategory, Double> categoryMap, String userComment) {
+        this.name = name;
+        this.card = card;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.categoryMap = categoryMap;
+        this.userComment = userComment;
+    }
 
-    public void addCategory(CbCategory c, Float f) {
+    public void addCategory(CbCategory c, Double f) {
         this.categoryMap.put(c, f);
     }
 }

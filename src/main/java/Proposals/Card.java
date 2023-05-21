@@ -16,6 +16,17 @@ public class Card {
         this.plasticStatus = plasticStatus;
     }
 
+    @Override
+    public String toString() {
+        return "Card{" +
+                "name='" + name + '\'' +
+                ", bankName='" + bankName + '\'' +
+                ", creditStatus=" + creditStatus +
+                ", plasticStatus=" + plasticStatus +
+                ", expireDate=" + expireDate +
+                '}';
+    }
+
     public String getName() {
         return name;
     }
