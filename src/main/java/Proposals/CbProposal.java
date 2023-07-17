@@ -1,17 +1,16 @@
 package Proposals;
 
-import jdk.jfr.Category;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Map;
 
 public class CbProposal {
     private String name;
     private Card card;
     private Date startDate;
     private Date endDate;
-    private HashMap<CbCategory,Double> categoryMap = new HashMap<>();
+    private Map<CbCategory,Double> categoryMap = new HashMap<>();
     private String userComment;
     private int indexInDb;
     public int getIndexInDb() {
@@ -55,11 +54,11 @@ public class CbProposal {
         this.endDate = endDate;
     }
 
-    public HashMap<CbCategory, Double> getCategoryMap() {
+    public Map<CbCategory, Double> getCategoryMap() {
         return categoryMap;
     }
 
-    public void setCategoryMap(HashMap<CbCategory, Double> categoryMap) {
+    public void setCategoryMap(Map<CbCategory, Double> categoryMap) {
         this.categoryMap = categoryMap;
     }
 
@@ -81,7 +80,7 @@ public class CbProposal {
 
     }
 
-    public CbProposal(Card card, Date startDate, Date endDate, HashMap<CbCategory, Double> categoryMap, String userComment) {
+    public CbProposal(Card card, Date startDate, Date endDate, Map<CbCategory, Double> categoryMap, String userComment) {
         this.card = card;
         this.startDate = startDate;
         this.endDate = endDate;

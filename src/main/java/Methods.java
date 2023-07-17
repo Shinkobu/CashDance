@@ -12,13 +12,11 @@ public class Methods {
         String name;
         String bankName;
 
-        try (Scanner myScan = new Scanner(System.in)) {
             System.out.println("Название банка, например, Сбербанк: \n");
-            bankName = myScan.nextLine();
+            bankName = App.myScan.nextLine();
 
             System.out.println("Название карты, например, Карта сбера: \n");
-            name = myScan.nextLine();
-        }
+            name = App.myScan.nextLine();
 
         Card newCard = new Card(name, bankName);
 
@@ -30,36 +28,40 @@ public class Methods {
 
     public static void addNewCbProposal() throws IOException {
 
-    /*        public CbProposal(String name, Card card, Date startDate, Date endDate, HashMap< CbCategory, Double> categoryMap, String userComment) {
-            this.name = name;
-            this.card = card;
-            this.startDate = startDate;
-            this.endDate = endDate;
-            this.categoryMap = categoryMap;
-            this.userComment = userComment;
+        /*
+        1) Ввести новые категории кешбека по карте?
+        2) Выбери карту
+        3) С какой даты действует?
+        4) До какой даты действует?
+        5) Вот категории, выбери категорию
+        6) Хорошо, укажи % кешбека
+        7) Ещё категории? Если да, то 5,6,7...
+        8) Новые категории сохранены. БД имеет вид
+         */
 
-     */
+         String name;
+         Card card;
+         Date startDate;
+         Date endDate;
+         HashMap<CbCategory,Double> categoryMap;
+         String userComment;
+
 
         Date startDate;
         Date endDate;
         HashMap <CbCategory, Double> categoryMap;
 
         Card card = findCardByName();
-//todo
-//        try (Scanner myScan = new Scanner(System.in)) {
-//            System.out.println("Название, например, акции по сберу Сбербанк: \n");
-//            bankName = myScan.nextLine();
-//
-//            System.out.println("Название карты, например, Карта сбера: \n");
-//            name = myScan.nextLine();
+
+
+            System.out.println("Название, например, акции по сберу Сбербанк: \n");
+            bankName = myScan.nextLine();
+
+            System.out.println("Название карты, например, Карта сбера: \n");
+            name = myScan.nextLine();
         }
 
 
-//
-//        Repository.addNewCard(newCard);
-//        System.out.println("\nКарта успешно добавлена в базу данных\n");
-//        System.out.println("База данных имеет вид:\n");
-//        Database.showCardDB();
     }
 
     public static Card findCardByName() throws IOException {

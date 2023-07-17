@@ -26,9 +26,14 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
 
 public class App {
+    static final Scanner myScan = new Scanner(System.in);
     public static void main(String[] args) throws ParseException, IOException {
+
+        // Fill in test data
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
 
@@ -40,7 +45,7 @@ public class App {
         CbCategory cat6 = new CbCategory("ALL", "На всё");
 
         Card card1 = new Card("Карта Сбера", "Сбербанк");
-        Card card2 = new Card("Карта Альфы", "Альфабанк");
+        Card card2 = new Card("Карта Альфы", "Альфа-банк");
         Card card3 = new Card("Карта Тинькофф", "Тинькофф");
         Card card4 = new Card("Карта Сбера вирт", "Сбербанк");
 
@@ -49,12 +54,12 @@ public class App {
         Repository.addNewCard(card3);
         Repository.addNewCard(card4);
 
-        HashMap <CbCategory, Double> hashMap1 = new HashMap<>();
+        Map<CbCategory, Double> hashMap1 = new HashMap<>();
         hashMap1.put(cat1, 0.01);
         hashMap1.put(cat2, 0.05);
         hashMap1.put(cat3, 0.07);
 
-        HashMap <CbCategory, Double> hashMap2 = new HashMap<>();
+        Map <CbCategory, Double> hashMap2 = new HashMap<>();
         hashMap2.put(cat3, 0.15);
         hashMap2.put(cat4, 0.01);
         hashMap2.put(cat5, 0.04);
@@ -71,6 +76,7 @@ public class App {
 //        Database.showDB();
 
         Controller.run();
+        myScan.close();
     }
 
 
