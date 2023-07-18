@@ -1,30 +1,19 @@
-import Proposals.Card;
+public interface Repository {
 
-import java.util.Iterator;
-import java.util.List;
+    void showMyCards();
+    void addNewCard(Card card);
+    int findCard();
 
-public class Repository {
+    void changeCard(int i, Card card);
 
+    void deleteCard(int i);
 
-    public static void addNewCard(Card card){
-        Database.addCard(card);
-    }
+    void showMyCategories();
+    void addNewCategory(CbCategory category);
+    int findCategory();
 
-    public static Card findByName(String nameToFind) {
-        List<Card> tempDB = Database.getCardDatabase();
-        boolean isFound = false;
-        Card tempCard = null;
-        Card foundCard = null;
+    void changeCategory(int i, CbCategory category);
 
-        Iterator<Card> cardIterator = tempDB.iterator();
-        while (cardIterator.hasNext() && !isFound) {
-            tempCard = cardIterator.next();
-            if (tempCard.getName().equals(nameToFind)) {
-                isFound = true;
-                foundCard = tempCard;
-                foundCard.setIndexInDb(tempDB.indexOf(tempCard));
-            }
-        }
-        return foundCard;
-    }
+    void deleteCategory(int i);
+
 }

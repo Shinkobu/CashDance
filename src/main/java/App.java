@@ -20,8 +20,6 @@ todo
 
  */
 
-import Proposals.*;
-
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -37,45 +35,56 @@ public class App {
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
 
-        CbCategory cat1 = new CbCategory("Pharmacy", "Аптеки");
-        CbCategory cat2 = new CbCategory("GasStation", "АЗС");
-        CbCategory cat3 = new CbCategory("Tourism", "Путешествия");
-        CbCategory cat4 = new CbCategory("Markets", "Продукты");
-        CbCategory cat5 = new CbCategory("Appliances", "Бытовая техника");
-        CbCategory cat6 = new CbCategory("ALL", "На всё");
+        CbCategory cat1 = new CbCategory("Аптеки");
+        CbCategory cat2 = new CbCategory("АЗС");
+        CbCategory cat3 = new CbCategory("Путешествия");
+        CbCategory cat4 = new CbCategory("Продукты");
+        CbCategory cat5 = new CbCategory("Бытовая техника");
+        CbCategory cat6 = new CbCategory("На всё");
 
         Card card1 = new Card("Карта Сбера", "Сбербанк");
         Card card2 = new Card("Карта Альфы", "Альфа-банк");
         Card card3 = new Card("Карта Тинькофф", "Тинькофф");
         Card card4 = new Card("Карта Сбера вирт", "Сбербанк");
 
-        Repository.addNewCard(card1);
-        Repository.addNewCard(card2);
-        Repository.addNewCard(card3);
-        Repository.addNewCard(card4);
+        Repository myRepo = new cbRepository();
+        myRepo.addNewCard(card1);
+        myRepo.addNewCard(card2);
+        myRepo.addNewCard(card3);
+        myRepo.addNewCard(card4);
 
-        Map<CbCategory, Double> hashMap1 = new HashMap<>();
-        hashMap1.put(cat1, 0.01);
-        hashMap1.put(cat2, 0.05);
-        hashMap1.put(cat3, 0.07);
-
-        Map <CbCategory, Double> hashMap2 = new HashMap<>();
-        hashMap2.put(cat3, 0.15);
-        hashMap2.put(cat4, 0.01);
-        hashMap2.put(cat5, 0.04);
+        myRepo.addNewCategory(cat1);
+        myRepo.addNewCategory(cat2);
+        myRepo.addNewCategory(cat3);
+        myRepo.addNewCategory(cat4);
+        myRepo.addNewCategory(cat5);
+        myRepo.addNewCategory(cat6);
 
 
-        CbProposal proposal1 = new CbProposal(card1, dateFormat.parse("01-01-2012"),
-                dateFormat.parse("01-01-2012"), hashMap1, "тестовая позиция 1");
 
-        CbProposal proposal2 = new CbProposal(card2, dateFormat.parse("01-01-2012"),
-                dateFormat.parse("01-01-2012"), hashMap2, "тестовая позиция 2");
+        CbChance chance1 = new CbChance("тестовый шанс 1", card1, dateFormat.parse("01-07-2023"),
+                dateFormat.parse("31-07-2023"), cat1, 0.01);
+        CbChance chance2 = new CbChance("тестовый шанс 2", card2, dateFormat.parse("01-01-2012"),
+                dateFormat.parse("01-01-2012"), cat2, 0.1);
+        CbChance chance3 = new CbChance("тестовый шанс 3", card3, dateFormat.parse("01-01-2012"),
+                dateFormat.parse("01-01-2012"), cat3, 0.15);
+        CbChance chance4 = new CbChance("тестовый шанс 4", card1, dateFormat.parse("01-01-2012"),
+                dateFormat.parse("01-01-2012"), cat4, 0.005);
+        CbChance chance5 = new CbChance("тестовый шанс 5", card4, dateFormat.parse("01-01-2012"),
+                dateFormat.parse("01-01-2012"), cat5, 0.30);
+        CbChance chance6 = new CbChance("тестовый шанс 6", card2, dateFormat.parse("01-01-2012"),
+                dateFormat.parse("01-01-2012"), cat5, 0.30);
 
-        Database.addCbProposal(proposal1);
-        Database.addCbProposal(proposal2);
-//        Database.showDB();
 
-        Controller.run();
+        Database.addCbProposal(chance1);
+        Database.addCbProposal(chance2);
+        Database.addCbProposal(chance3);
+        Database.addCbProposal(chance4);
+        Database.addCbProposal(chance5);
+        Database.addCbProposal(chance6);
+
+
+        Controller.mainMenu();
         myScan.close();
     }
 

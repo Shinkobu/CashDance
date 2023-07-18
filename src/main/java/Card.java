@@ -1,5 +1,3 @@
-package Proposals;
-
 import java.util.Date;
 
 public class Card {

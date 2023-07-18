@@ -1,29 +1,35 @@
-import Proposals.Card;
-import Proposals.CbCategory;
-
 import java.io.IOException;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Scanner;
 
 public class Methods {
-    public static void addNewCard() {
+    public static Card createNewCard() {
 
         String name;
         String bankName;
 
-            System.out.println("Название банка, например, Сбербанк: \n");
-            bankName = App.myScan.nextLine();
+        System.out.println("Название банка, например, Сбербанк: \n");
+        bankName = App.myScan.nextLine();
 
-            System.out.println("Название карты, например, Карта сбера: \n");
-            name = App.myScan.nextLine();
+        System.out.println("Название карты, например, Карта сбера: \n");
+        name = App.myScan.nextLine();
 
         Card newCard = new Card(name, bankName);
+        return newCard;
+    }
 
-        Repository.addNewCard(newCard);
-        System.out.println("\nКарта успешно добавлена в базу данных\n");
-        System.out.println("База данных имеет вид:\n");
-        Database.showCardDB();
+    public static CbCategory createNewCategory() {
+
+
+        String name;
+
+        System.out.println("Введите название категории: \n");
+        name = App.myScan.nextLine();
+
+        CbCategory category = new CbCategory(name);
+
+        return category;
     }
 
     public static void addNewCbProposal() throws IOException {
@@ -39,35 +45,33 @@ public class Methods {
         8) Новые категории сохранены. БД имеет вид
          */
 
-         String name;
-         Card card;
-         Date startDate;
-         Date endDate;
-         HashMap<CbCategory,Double> categoryMap;
-         String userComment;
-
-
+        String name;
+        Card card;
         Date startDate;
         Date endDate;
-        HashMap <CbCategory, Double> categoryMap;
-
-        Card card = findCardByName();
-
-
-            System.out.println("Название, например, акции по сберу Сбербанк: \n");
-            bankName = myScan.nextLine();
-
-            System.out.println("Название карты, например, Карта сбера: \n");
-            name = myScan.nextLine();
-        }
+        HashMap<CbCategory, Double> categoryMap;
+        String userComment;
 
 
+//        Date startDate;
+//        Date endDate;
+//        HashMap <CbCategory, Double> categoryMap;
+
+//        Card card = findCardByName();
+
+
+//            System.out.println("Название, например, акции по сберу Сбербанк: \n");
+//            bankName = myScan.nextLine();
+
+//            System.out.println("Название карты, например, Карта сбера: \n");
+//            name = myScan.nextLine();
     }
+
 
     public static Card findCardByName() throws IOException {
 
         String tempName;
-        try(Scanner myScan = new Scanner(System.in)){
+        try (Scanner myScan = new Scanner(System.in)) {
             System.out.println("\nБаза данных имеет вид:\n");
             Database.showCardDB();
 
@@ -75,7 +79,7 @@ public class Methods {
             tempName = myScan.nextLine();
         }
 
-        Card foundCard = Repository.findByName(tempName);
+        Card foundCard = cbRepository.findByName(tempName);
 
         if (foundCard != null) {
             System.out.println("\nКарта " + tempName + " найдена!");

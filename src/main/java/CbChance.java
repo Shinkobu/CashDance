@@ -1,23 +1,19 @@
-package Proposals;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CbProposal {
+public class CbChance {
     private String name;
     private Card card;
     private Date startDate;
     private Date endDate;
-    private Map<CbCategory,Double> categoryMap = new HashMap<>();
     private String userComment;
+    private CbCategory category;
+    private Double rate;
     private int indexInDb;
     public int getIndexInDb() {
         return indexInDb;
-    }
-    public void setIndexInDb(int indexInDb) {
-        this.indexInDb = indexInDb;
     }
 
     SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
@@ -54,14 +50,6 @@ public class CbProposal {
         this.endDate = endDate;
     }
 
-    public Map<CbCategory, Double> getCategoryMap() {
-        return categoryMap;
-    }
-
-    public void setCategoryMap(Map<CbCategory, Double> categoryMap) {
-        this.categoryMap = categoryMap;
-    }
-
     public String getUserComment() {
         return userComment;
     }
@@ -75,20 +63,16 @@ public class CbProposal {
     public String toString() {
         return "Кешбек категории - " + card.getName()+": \n"+
                 "Категории действуют с " + startDate +"\n"+
-                "Категории действуют до " + endDate + "\n" +
-                categoryMap.toString();
+                "Категории действуют до " + endDate;
 
     }
 
-    public CbProposal(Card card, Date startDate, Date endDate, Map<CbCategory, Double> categoryMap, String userComment) {
+    public CbChance(String name, Card card, Date startDate, Date endDate, CbCategory category, Double rate) {
+        this.name = name;
         this.card = card;
         this.startDate = startDate;
         this.endDate = endDate;
-        this.categoryMap = categoryMap;
-        this.userComment = userComment;
-    }
-
-    public void addCategory(CbCategory c, Double f) {
-        this.categoryMap.put(c, f);
+        this.category = category;
+        this.rate = rate;
     }
 }
