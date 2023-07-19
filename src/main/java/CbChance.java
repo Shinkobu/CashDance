@@ -1,6 +1,7 @@
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 public class CbChance {
@@ -12,6 +13,7 @@ public class CbChance {
     private CbCategory category;
     private Double rate;
     private int indexInDb;
+
     public int getIndexInDb() {
         return indexInDb;
     }
@@ -61,10 +63,11 @@ public class CbChance {
 
     @Override
     public String toString() {
-        return "Кешбек категории - " + card.getName()+": \n"+
-                "Категории действуют с " + startDate +"\n"+
-                "Категории действуют до " + endDate;
-
+        return name + " - Категория "+ category.getName() +
+                ", ставка " + rate*100 + " %" +
+                ", действует с " + App.newDateFormat.format(startDate) +
+                ", до " + App.newDateFormat.format(endDate) +
+                " по карте " + card.getName();
     }
 
     public CbChance(String name, Card card, Date startDate, Date endDate, CbCategory category, Double rate) {

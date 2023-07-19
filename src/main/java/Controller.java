@@ -1,9 +1,9 @@
-import jdk.jfr.Category;
-
 public class Controller {
-
+    static CbRepository cbRepository = new CbRepository();
 
     public static void mainMenu() {
+
+
 
         System.out.println("\nВыберите действие\n");
         System.out.println("" +
@@ -28,7 +28,8 @@ public class Controller {
                 break;
             case 3:
                 System.out.println("Категории вашего кэшбека: ");
-                Database.showCbProposalDB();
+                cbRepository.showCbChances();
+                mainMenu();
                 break;
             case 9:
                 System.exit(1);
@@ -38,7 +39,7 @@ public class Controller {
 
     public static void cardMenu() {
 
-        cbRepository cbRepository = new cbRepository();
+
         cbRepository.showMyCards();
 
         System.out.println("\nВыберите действие\n");
@@ -93,7 +94,7 @@ public class Controller {
 
     public static void categoryMenu() {
 
-        cbRepository cbRepository = new cbRepository();
+        CbRepository cbRepository = new CbRepository();
         cbRepository.showMyCategories();
 
         System.out.println("\nВыберите действие\n");

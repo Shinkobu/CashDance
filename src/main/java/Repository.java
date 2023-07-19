@@ -16,4 +16,6 @@ public interface Repository {
 
     void deleteCategory(int i);
 
+    void showCbChances();
+
 }

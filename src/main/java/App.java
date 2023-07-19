@@ -23,17 +23,18 @@ todo
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class App {
     static final Scanner myScan = new Scanner(System.in);
+    static SimpleDateFormat oldDateFormat = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault());
+    static SimpleDateFormat newDateFormat = new SimpleDateFormat("dd MMMM yyyy", Locale.getDefault());
     public static void main(String[] args) throws ParseException, IOException {
 
         // Fill in test data
 
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+
 
         CbCategory cat1 = new CbCategory("Аптеки");
         CbCategory cat2 = new CbCategory("АЗС");
@@ -47,7 +48,7 @@ public class App {
         Card card3 = new Card("Карта Тинькофф", "Тинькофф");
         Card card4 = new Card("Карта Сбера вирт", "Сбербанк");
 
-        Repository myRepo = new cbRepository();
+        Repository myRepo = new CbRepository();
         myRepo.addNewCard(card1);
         myRepo.addNewCard(card2);
         myRepo.addNewCard(card3);
@@ -62,18 +63,18 @@ public class App {
 
 
 
-        CbChance chance1 = new CbChance("тестовый шанс 1", card1, dateFormat.parse("01-07-2023"),
-                dateFormat.parse("31-07-2023"), cat1, 0.01);
-        CbChance chance2 = new CbChance("тестовый шанс 2", card2, dateFormat.parse("01-01-2012"),
-                dateFormat.parse("01-01-2012"), cat2, 0.1);
-        CbChance chance3 = new CbChance("тестовый шанс 3", card3, dateFormat.parse("01-01-2012"),
-                dateFormat.parse("01-01-2012"), cat3, 0.15);
-        CbChance chance4 = new CbChance("тестовый шанс 4", card1, dateFormat.parse("01-01-2012"),
-                dateFormat.parse("01-01-2012"), cat4, 0.005);
-        CbChance chance5 = new CbChance("тестовый шанс 5", card4, dateFormat.parse("01-01-2012"),
-                dateFormat.parse("01-01-2012"), cat5, 0.30);
-        CbChance chance6 = new CbChance("тестовый шанс 6", card2, dateFormat.parse("01-01-2012"),
-                dateFormat.parse("01-01-2012"), cat5, 0.30);
+        CbChance chance1 = new CbChance("тестовый шанс 1", card1, oldDateFormat.parse("01-07-2023"),
+                oldDateFormat.parse("31-07-2023"), cat1, 0.01);
+        CbChance chance2 = new CbChance("тестовый шанс 2", card2, oldDateFormat.parse("01-01-2012"),
+                oldDateFormat.parse("01-01-2012"), cat2, 0.1);
+        CbChance chance3 = new CbChance("тестовый шанс 3", card3, oldDateFormat.parse("01-01-2012"),
+                oldDateFormat.parse("01-01-2012"), cat3, 0.15);
+        CbChance chance4 = new CbChance("тестовый шанс 4", card1, oldDateFormat.parse("01-01-2012"),
+                oldDateFormat.parse("01-01-2012"), cat4, 0.005);
+        CbChance chance5 = new CbChance("тестовый шанс 5", card4, oldDateFormat.parse("01-01-2012"),
+                oldDateFormat.parse("01-01-2012"), cat5, 0.30);
+        CbChance chance6 = new CbChance("тестовый шанс 6", card2, oldDateFormat.parse("01-01-2012"),
+                oldDateFormat.parse("01-01-2012"), cat5, 0.30);
 
 
         Database.addCbProposal(chance1);

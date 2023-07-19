@@ -24,7 +24,7 @@ public class Card {
         return "Card{" +
                 "name='" + name + '\'' +
                 ", bankName='" + bankName + '\'' +
-                ", expireDate=" + expireDate +
+                ", expireDate=" + App.newDateFormat.format(expireDate) +
                 '}';
     }
 

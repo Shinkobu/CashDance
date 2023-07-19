@@ -79,7 +79,7 @@ public class Methods {
             tempName = myScan.nextLine();
         }
 
-        Card foundCard = cbRepository.findByName(tempName);
+        Card foundCard = CbRepository.findByName(tempName);
 
         if (foundCard != null) {
             System.out.println("\nКарта " + tempName + " найдена!");

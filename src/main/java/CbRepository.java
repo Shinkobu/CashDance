@@ -1,7 +1,7 @@
 import java.util.Iterator;
 import java.util.List;
 
-public class cbRepository implements Repository {
+public class CbRepository implements Repository {
 
 
     public static Card findByName(String nameToFind) {
@@ -109,6 +109,10 @@ public class cbRepository implements Repository {
     public void deleteCategory(int i) {
         Database.deleteCategory(i);
         System.out.println("Категория удалена!");
+    }
+
+    public void showCbChances(){
+        Database.showCbChancesDB();
     }
 
 
