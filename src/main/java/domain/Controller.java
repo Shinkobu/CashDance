@@ -1,7 +1,9 @@
-package CashDance.domain;
+package domain;
+
+import SQL.SqlDataGetter;
 
 public class Controller {
-    static SqlDataGetter SqlDataGetter = new SqlDataGetter();
+    static SqlDataGetter sqlDataGetter = new SqlDataGetter();
 
     public static void mainMenu() {
 
@@ -30,7 +32,7 @@ public class Controller {
                 break;
             case 3:
                 System.out.println("Категории вашего кэшбека: ");
-                SqlDataGetter.showCbChances();
+                sqlDataGetter.showCbChances();
                 mainMenu();
                 break;
             case 9:
@@ -42,7 +44,7 @@ public class Controller {
     public static void cardMenu() {
 
 
-        SqlDataGetter.showMyCards();
+        sqlDataGetter.showMyCards();
 
         System.out.println("\nВыберите действие\n");
         System.out.println("" +
@@ -67,21 +69,21 @@ public class Controller {
             case 22:
 
                 tempCard = Methods.createNewCard(); // создаёт в диалоге новую карту
-                SqlDataGetter.addNewCard(tempCard);// записывает карту через репо в БД
+                sqlDataGetter.addNewCard(tempCard);// записывает карту через репо в БД
                 System.out.println("\nКарта успешно добавлена в базу данных\n");
                 System.out.println("База данных имеет вид:\n");
 
                 cardMenu();
                 break;
             case 33:
-                indexDB = SqlDataGetter.findCard();  // поиск карты для замены
+                indexDB = sqlDataGetter.findCard();  // поиск карты для замены
                 tempCard = Methods.createNewCard(); // создаёт в диалоге новую карту
-                SqlDataGetter.changeCard(indexDB,tempCard); // замена старой карты на новую
+                sqlDataGetter.changeCard(indexDB,tempCard); // замена старой карты на новую
                 cardMenu();
                 break;
             case 44:
-                indexDB = SqlDataGetter.findCard();  // поиск карты для удаления
-                SqlDataGetter.deleteCard(indexDB); // удаление карты из БД
+                indexDB = sqlDataGetter.findCard();  // поиск карты для удаления
+                sqlDataGetter.deleteCard(indexDB); // удаление карты из БД
                 cardMenu();
                 break;
             case 99:
@@ -96,8 +98,8 @@ public class Controller {
 
     public static void categoryMenu() {
 
-        SqlDataGetter SqlDataGetter = new SqlDataGetter();
-        SqlDataGetter.showMyCategories();
+        SqlDataGetter sqlDataGetter = new SqlDataGetter();
+        sqlDataGetter.showMyCategories();
 
         System.out.println("\nВыберите действие\n");
         System.out.println("" +
@@ -122,18 +124,18 @@ public class Controller {
             case 22:
 
                 tempCategory = Methods.createNewCategory(); // создаёт в диалоге новую категорию
-                SqlDataGetter.addNewCategory(tempCategory);// записывает категорию через репо в БД
+                sqlDataGetter.addNewCategory(tempCategory);// записывает категорию через репо в БД
                 categoryMenu();
                 break;
             case 33:
-                indexDB = SqlDataGetter.findCategory();  // поиск категории для замены
+                indexDB = sqlDataGetter.findCategory();  // поиск категории для замены
                 tempCategory = Methods.createNewCategory(); // создаёт в диалоге новую категорию
-                SqlDataGetter.changeCategory(indexDB,tempCategory); // замена старой категории на новую
+                sqlDataGetter.changeCategory(indexDB,tempCategory); // замена старой категории на новую
                 categoryMenu();
                 break;
             case 44:
-                indexDB = SqlDataGetter.findCategory(); // поиск категории для удаления
-                SqlDataGetter.deleteCategory(indexDB); // удаление категории из БД
+                indexDB = sqlDataGetter.findCategory(); // поиск категории для удаления
+                sqlDataGetter.deleteCategory(indexDB); // удаление категории из БД
                 categoryMenu();
                 break;
             case 99:

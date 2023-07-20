@@ -2,6 +2,8 @@ package domain;
 
 public interface Repository {
 
+    Card findByName(String nameToFind);
+
     void showMyCards();
     void addNewCard(Card card);
     int findCard();

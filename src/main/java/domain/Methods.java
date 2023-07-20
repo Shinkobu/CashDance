@@ -1,5 +1,7 @@
 package domain;
 
+import SQL.SqlDataGetter;
+
 import java.io.IOException;
 import java.util.Date;
 import java.util.HashMap;
@@ -81,7 +83,9 @@ public class Methods {
             tempName = myScan.nextLine();
         }
 
-        Card foundCard = SqlDataGetter.findByName(tempName);
+        SqlDataGetter sqlDataGetter = new SqlDataGetter();
+
+        Card foundCard = sqlDataGetter.findByName(tempName);
 
         if (foundCard != null) {
             System.out.println("\nКарта " + tempName + " найдена!");

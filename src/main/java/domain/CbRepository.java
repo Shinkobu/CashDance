@@ -6,7 +6,7 @@ import java.util.List;
 public class CbRepository implements Repository {
 
 
-    public static Card findByName(String nameToFind) {
+    public Card findByName(String nameToFind) {
         List<Card> tempDB = Database.getCardDatabase();
         boolean isFound = false;
         Card tempCard = null;
@@ -29,6 +29,7 @@ public class CbRepository implements Repository {
         Database.showCardDB();
     }
 
+    @Override
     public void addNewCard(Card card) {
         Database.addCard(card);
         System.out.println("\nКарта успешно добавлена в базу данных\n");
@@ -112,7 +113,7 @@ public class CbRepository implements Repository {
         Database.deleteCategory(i);
         System.out.println("Категория удалена!");
     }
-
+    @Override
     public void showCbChances(){
         Database.showCbChancesDB();
     }
