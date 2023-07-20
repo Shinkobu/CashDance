@@ -1,5 +1,7 @@
+package CashDance.domain;
+
 public class Controller {
-    static CbRepository cbRepository = new CbRepository();
+    static SqlDataGetter SqlDataGetter = new SqlDataGetter();
 
     public static void mainMenu() {
 
@@ -28,7 +30,7 @@ public class Controller {
                 break;
             case 3:
                 System.out.println("Категории вашего кэшбека: ");
-                cbRepository.showCbChances();
+                SqlDataGetter.showCbChances();
                 mainMenu();
                 break;
             case 9:
@@ -40,7 +42,7 @@ public class Controller {
     public static void cardMenu() {
 
 
-        cbRepository.showMyCards();
+        SqlDataGetter.showMyCards();
 
         System.out.println("\nВыберите действие\n");
         System.out.println("" +
@@ -65,21 +67,21 @@ public class Controller {
             case 22:
 
                 tempCard = Methods.createNewCard(); // создаёт в диалоге новую карту
-                cbRepository.addNewCard(tempCard);// записывает карту через репо в БД
+                SqlDataGetter.addNewCard(tempCard);// записывает карту через репо в БД
                 System.out.println("\nКарта успешно добавлена в базу данных\n");
                 System.out.println("База данных имеет вид:\n");
 
                 cardMenu();
                 break;
             case 33:
-                indexDB = cbRepository.findCard();  // поиск карты для замены
+                indexDB = SqlDataGetter.findCard();  // поиск карты для замены
                 tempCard = Methods.createNewCard(); // создаёт в диалоге новую карту
-                cbRepository.changeCard(indexDB,tempCard); // замена старой карты на новую
+                SqlDataGetter.changeCard(indexDB,tempCard); // замена старой карты на новую
                 cardMenu();
                 break;
             case 44:
-                indexDB = cbRepository.findCard();  // поиск карты для удаления
-                cbRepository.deleteCard(indexDB); // удаление карты из БД
+                indexDB = SqlDataGetter.findCard();  // поиск карты для удаления
+                SqlDataGetter.deleteCard(indexDB); // удаление карты из БД
                 cardMenu();
                 break;
             case 99:
@@ -94,8 +96,8 @@ public class Controller {
 
     public static void categoryMenu() {
 
-        CbRepository cbRepository = new CbRepository();
-        cbRepository.showMyCategories();
+        SqlDataGetter SqlDataGetter = new SqlDataGetter();
+        SqlDataGetter.showMyCategories();
 
         System.out.println("\nВыберите действие\n");
         System.out.println("" +
@@ -120,18 +122,18 @@ public class Controller {
             case 22:
 
                 tempCategory = Methods.createNewCategory(); // создаёт в диалоге новую категорию
-                cbRepository.addNewCategory(tempCategory);// записывает категорию через репо в БД
+                SqlDataGetter.addNewCategory(tempCategory);// записывает категорию через репо в БД
                 categoryMenu();
                 break;
             case 33:
-                indexDB = cbRepository.findCategory();  // поиск категории для замены
+                indexDB = SqlDataGetter.findCategory();  // поиск категории для замены
                 tempCategory = Methods.createNewCategory(); // создаёт в диалоге новую категорию
-                cbRepository.changeCategory(indexDB,tempCategory); // замена старой категории на новую
+                SqlDataGetter.changeCategory(indexDB,tempCategory); // замена старой категории на новую
                 categoryMenu();
                 break;
             case 44:
-                indexDB = cbRepository.findCategory(); // поиск категории для удаления
-                cbRepository.deleteCategory(indexDB); // удаление категории из БД
+                indexDB = SqlDataGetter.findCategory(); // поиск категории для удаления
+                SqlDataGetter.deleteCategory(indexDB); // удаление категории из БД
                 categoryMenu();
                 break;
             case 99:

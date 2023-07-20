@@ -1,3 +1,5 @@
+package domain;
+
 import java.util.Date;
 
 public class Card {
@@ -21,7 +23,7 @@ public class Card {
 
     @Override
     public String toString() {
-        return "Card{" +
+        return "CashDance.domain.Card{" +
                 "name='" + name + '\'' +
                 ", bankName='" + bankName + '\'' +
                 ", expireDate=" + App.newDateFormat.format(expireDate) +

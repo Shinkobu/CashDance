@@ -1,3 +1,5 @@
+package domain;
+
 public class CbCategory {
     String name;
 
@@ -9,7 +11,7 @@ public class CbCategory {
 
     @Override
     public String toString() {
-        return "CbCategory{" +
+        return "CashDance.domain.CbCategory{" +
                 "name='" + name + '\'' +
                 '}';
     }

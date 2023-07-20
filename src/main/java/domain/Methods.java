@@ -1,3 +1,5 @@
+package domain;
+
 import java.io.IOException;
 import java.util.Date;
 import java.util.HashMap;
@@ -55,9 +57,9 @@ public class Methods {
 
 //        Date startDate;
 //        Date endDate;
-//        HashMap <CbCategory, Double> categoryMap;
+//        HashMap <CashDance.domain.CbCategory, Double> categoryMap;
 
-//        Card card = findCardByName();
+//        CashDance.domain.Card card = findCardByName();
 
 
 //            System.out.println("Название, например, акции по сберу Сбербанк: \n");
@@ -79,7 +81,7 @@ public class Methods {
             tempName = myScan.nextLine();
         }
 
-        Card foundCard = CbRepository.findByName(tempName);
+        Card foundCard = SqlDataGetter.findByName(tempName);
 
         if (foundCard != null) {
             System.out.println("\nКарта " + tempName + " найдена!");
