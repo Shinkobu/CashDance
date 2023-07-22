@@ -98,7 +98,6 @@ public class Controller {
 
     public static void categoryMenu() {
 
-        SqlDataGetter sqlDataGetter = new SqlDataGetter();
         sqlDataGetter.showMyCategories();
 
         System.out.println("\nВыберите действие\n");

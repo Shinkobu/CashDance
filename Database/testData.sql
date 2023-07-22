@@ -62,10 +62,16 @@ SELECT * FROM categories;
 CREATE TABLE cbChances(
 id_chance serial PRIMARY KEY,
 name_chance VARCHAR(100) NOT NULL,
-id_card INTEGER REFERENCES cards(id_card) NOT NULL,
+id_card INTEGER REFERENCES cards(id_card) 
+	ON UPDATE CASCADE  
+	ON DELETE NO ACTION
+	NOT NULL,
 from_date DATE NOT NULL,
 to_date DATE NOT NULL,
-id_category INTEGER REFERENCES categories(id_category) NOT NULL,
+id_category INTEGER REFERENCES categories(id_category) 
+	ON UPDATE CASCADE  
+	ON DELETE NO ACTION
+	NOT NULL,
 rate REAL NOT NULL
 );
 
@@ -90,5 +96,5 @@ JOIN categories ON cbChances.id_category = categories.id_category
 WHERE (from_date >= '01-07-2023' and to_date <='31-07-2023') or
 (from_date <= '01-07-2023' and to_date >='31-07-2023');
 
-
 SELECT * FROM cbQuery;
+

@@ -28,7 +28,7 @@ import java.util.Locale;
 import java.util.Scanner;
 
 public class App {
-    static final Scanner myScan = new Scanner(System.in);
+    public static final Scanner myScan = new Scanner(System.in);
     static SimpleDateFormat oldDateFormat = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault());
     static SimpleDateFormat newDateFormat = new SimpleDateFormat("dd MMMM yyyy", Locale.getDefault());
     public static void main(String[] args) throws ParseException, IOException, ClassNotFoundException, SQLException {

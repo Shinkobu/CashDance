@@ -97,8 +97,8 @@ public class CbRepository implements Repository {
             }
         }
 
-        System.out.println("Карта не найдена, попробуйте ещё раз");
-        findCard();
+        System.out.println("Категория не найдена, попробуйте ещё раз");
+        findCategory();
         return -1;
     }
 

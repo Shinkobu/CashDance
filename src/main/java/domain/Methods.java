@@ -25,16 +25,13 @@ public class Methods {
 
     public static CbCategory createNewCategory() {
 
-
         String name;
-
         System.out.println("Введите название категории: \n");
         name = App.myScan.nextLine();
-
         CbCategory category = new CbCategory(name);
-
         return category;
     }
+
 
     public static void addNewCbProposal() throws IOException {
 
