@@ -1,7 +1,7 @@
-package edu.cashdance.domain;
-
+import edu.cashdance.App;
 import edu.cashdance.SQL.ConnectionBuilder;
-import org.junit.BeforeClass;
+import edu.cashdance.SQL.SqlDataGetter;
+import edu.cashdance.domain.CbChance;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -12,18 +12,17 @@ import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.ParseException;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class ControllerTest {
-
+public class MyClassTest {
     @Test
-    @BeforeClass
     /**
-     * Создаёт тестовую базу данных
+     * РЎРѕР·РґР°С‘С‚ С‚РµСЃС‚РѕРІСѓСЋ Р±Р°Р·Сѓ РґР°РЅРЅС‹С…
      */
-    public static void testDatabaseBuilder() throws URISyntaxException, IOException {
-        URL url = ControllerTest.class.getClassLoader().getResource("testDatabaseCreator.sql");
+    public void testDatabaseBuilder() throws URISyntaxException, IOException {
+        URL url = MyClassTest.class.getClassLoader().getResource("testDatabaseCreator.sql");
         List<String> str = Files.readAllLines(Paths.get(url.toURI()));
         String sql = str.stream().collect(Collectors.joining());
 
@@ -31,14 +30,18 @@ public class ControllerTest {
              Statement statement = connection.createStatement()
         ) {
             statement.executeUpdate(sql);
-            System.out.println("Создана тестовая база данных");
+            System.out.println("РЎРѕР·РґР°РЅР° С‚РµСЃС‚РѕРІР°СЏ Р±Р°Р·Р° РґР°РЅРЅС‹С…");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
 
     @Test
-    public void test() {
-
+    public void testAddNewCard() throws ParseException {
+        SqlDataGetter sqlDataGetter = new SqlDataGetter();
+        sqlDataGetter.addNewCbChance(new CbChance( "test CbChance", 1,
+                App.oldDateFormat.parse("01-07-2023"),
+                App.oldDateFormat.parse("31-07-2023"),
+                1, 0.05));
     }
 }

@@ -165,7 +165,6 @@ public class Controller {
         switch (choice) {
 
             case 22:
-
                 cbChance = Methods.CbChanceBuilder();
                 sqlDataGetter.addNewCbChance(cbChance);
                 System.out.println("\nКэшбек успешно добавлен в базу данных\n");

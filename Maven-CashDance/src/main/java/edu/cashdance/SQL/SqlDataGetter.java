@@ -266,10 +266,14 @@ public class SqlDataGetter implements Repository {
 
     public void deleteCbChance(int i) {
         try (Connection connection = ConnectionBuilder.getConnection()) {
+//todo answer if no CbChance to delete (wrong id)
+            PreparedStatement pSt = connection.prepareStatement("DELETE FROM cbChances " +
+                    "WHERE id_chance = ?");
+            pSt.setString(1, String.valueOf(i));
 
-            Statement stmt = connection.createStatement();
-            stmt.executeUpdate("DELETE FROM cbChances " +
-                    "WHERE id_chance = " + i + "");
+//            Statement stmt = connection.createStatement();
+//            stmt.executeUpdate("DELETE FROM cbChances " +
+//                    "WHERE id_chance = " + i + "");
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
