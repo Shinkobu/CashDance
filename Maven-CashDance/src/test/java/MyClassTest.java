@@ -42,6 +42,6 @@ public class MyClassTest {
         sqlDataGetter.addNewCbChance(new CbChance( "test CbChance", 1,
                 App.oldDateFormat.parse("01-07-2023"),
                 App.oldDateFormat.parse("31-07-2023"),
-                1, 0.05));
+                1, 0.15));
     }
 }

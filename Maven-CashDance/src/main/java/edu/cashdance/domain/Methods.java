@@ -49,6 +49,8 @@ public class Methods {
         SqlDataGetter sqlDataGetter = new SqlDataGetter();
 
         try {
+
+            // TODO: 29.07.2023 Add while !hasnext...
             System.out.println("Введите название кэшбек шанса: \n");
             name = App.myScan.nextLine();
 

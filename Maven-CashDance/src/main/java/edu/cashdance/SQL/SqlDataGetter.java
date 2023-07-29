@@ -226,7 +226,7 @@ public class SqlDataGetter implements Repository {
                 connection.commit(); // commit if everything is ok
             } catch (SQLException e) {
                 connection.rollback(); // rollback (no commit to DB if any exception occurs)
-                throw new RuntimeException(e);
+                throw new SQLException(e);
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
