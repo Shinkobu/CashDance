@@ -3,6 +3,8 @@ package edu.cashdance.domain;
 import edu.cashdance.SQL.SqlDataGetter;
 import edu.cashdance.App;
 import edu.cashdance.old.Database;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.text.ParseException;
@@ -10,7 +12,13 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Scanner;
 
+import static edu.cashdance.App.logger;
+
+
 public class Methods {
+
+//    private static final Logger logger = LogManager.getLogger(Methods.class.getName());
+
     public static Card createNewCard() {
 
         String name;
@@ -36,6 +44,9 @@ public class Methods {
     }
 
     public static CbChance CbChanceBuilder() {
+
+        logger.info("Started creating a new CbChance");
+        logger.debug("Started creating a new CbChance - debug test");
 
         String name;
         int cardID;
@@ -73,51 +84,19 @@ public class Methods {
 
 
         } catch (ParseException e) {
+            logger.info(e.getMessage() + e + " this is info");
+            logger.debug("{}", () -> e + "this is debug");
+            logger.error(e.getMessage() + e + " this is error");
             throw new RuntimeException(e);
         }
 
         CbChance cbChance = new CbChance(name, cardID, startDate, endDate, categoryID, rate);
+        logger.info("Finished creating a new CbChance");
         return cbChance;
     }
 
 
-    public static void addNewCbProposal() throws IOException {
-
-        /*
-        1) Ввести новые категории кешбека по карте?
-        2) Выбери карту
-        3) С какой даты действует?
-        4) До какой даты действует?
-        5) Вот категории, выбери категорию
-        6) Хорошо, укажи % кешбека
-        7) Ещё категории? Если да, то 5,6,7...
-        8) Новые категории сохранены. БД имеет вид
-         */
-
-        String name;
-        Card card;
-        Date startDate;
-        Date endDate;
-        HashMap<CbCategory, Double> categoryMap;
-        String userComment;
-
-
-//        Date startDate;
-//        Date endDate;
-//        HashMap <CashDance.domain.CbCategory, Double> categoryMap;
-
-//        CashDance.domain.Card card = findCardByName();
-
-
-//            System.out.println("Название, например, акции по сберу Сбербанк: \n");
-//            bankName = myScan.nextLine();
-
-//            System.out.println("Название карты, например, Карта сбера: \n");
-//            name = myScan.nextLine();
-    }
-
-
-    public static Card findCardByName() throws IOException {
+    public static Card findCardByName() {
 
         String tempName;
         try (Scanner myScan = new Scanner(System.in)) {

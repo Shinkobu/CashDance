@@ -11,6 +11,8 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 
+import static edu.cashdance.App.logger;
+
 public class SqlDataGetter implements Repository {
 
     private final ConnectionBuilder connectionBuilder = new ConnectionBuilder();
@@ -32,6 +34,7 @@ public class SqlDataGetter implements Repository {
                         resultSet.getString(3));
             }
         } catch (SQLException e) {
+            logger.error(e.getMessage() + " this is error");
             throw new RuntimeException(e);
         }
     }
@@ -44,6 +47,7 @@ public class SqlDataGetter implements Repository {
                     "VALUES\n" +
                     "('" + card.getName() + "', '" + card.getBankName() + "');");
         } catch (SQLException e) {
+            logger.error(e.getMessage() + " this is error");
             throw new RuntimeException(e);
         }
     }
@@ -68,6 +72,7 @@ public class SqlDataGetter implements Repository {
 
             showMyCards();
         } catch (SQLException e) {
+            logger.error(e.getMessage() + " this is error");
             throw new RuntimeException(e);
         }
 
@@ -82,6 +87,7 @@ public class SqlDataGetter implements Repository {
                     "WHERE id_card = " + i + "");
 
         } catch (SQLException e) {
+            logger.error(e.getMessage() + " this is error");
             throw new RuntimeException(e);
         }
     }
@@ -97,6 +103,7 @@ public class SqlDataGetter implements Repository {
 
             }
         } catch (SQLException e) {
+            logger.error(e.getMessage() + " this is error");
             throw new RuntimeException(e);
         }
     }
@@ -117,6 +124,7 @@ public class SqlDataGetter implements Repository {
                 throw new RuntimeException(e);
             }
         } catch (SQLException e) {
+            logger.error(e.getMessage() + " this is error");
             throw new RuntimeException(e);
         }
     }
@@ -139,6 +147,7 @@ public class SqlDataGetter implements Repository {
 
             showMyCategories();
         } catch (SQLException e) {
+            logger.error(e.getMessage() + " this is error");
             throw new RuntimeException(e);
         }
     }
@@ -158,6 +167,7 @@ public class SqlDataGetter implements Repository {
                     "WHERE id_category = " + i + "");
 
         } catch (SQLException e) {
+            logger.error(e.getMessage() + " this is error");
             throw new RuntimeException(e);
         }
     }
@@ -203,6 +213,7 @@ public class SqlDataGetter implements Repository {
 
             }
         } catch (SQLException e) {
+            logger.error(e.getMessage() + " this is error");
             throw new RuntimeException(e);
         }
     }
@@ -225,10 +236,12 @@ public class SqlDataGetter implements Repository {
                         ";");
                 connection.commit(); // commit if everything is ok
             } catch (SQLException e) {
+                logger.error(e.getMessage() + " this is error");
                 connection.rollback(); // rollback (no commit to DB if any exception occurs)
                 throw new SQLException(e);
             }
         } catch (SQLException e) {
+            logger.error(e.getMessage() + " this is error");
             throw new RuntimeException(e);
         }
     }
@@ -253,6 +266,7 @@ public class SqlDataGetter implements Repository {
                 throw new RuntimeException(e);
             }
         } catch (SQLException e) {
+            logger.error(e.getMessage() + " this is error");
             throw new RuntimeException(e);
         }
     }
@@ -276,6 +290,7 @@ public class SqlDataGetter implements Repository {
 //                    "WHERE id_chance = " + i + "");
 
         } catch (SQLException e) {
+            logger.error(e.getMessage() + " this is error");
             throw new RuntimeException(e);
         }
     }

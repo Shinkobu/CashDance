@@ -21,6 +21,8 @@ todo
  */
 
 import edu.cashdance.domain.Controller;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.sql.*;
@@ -31,9 +33,10 @@ import java.util.Scanner;
 
 public class App {
     public static final Scanner myScan = new Scanner(System.in);
+    public static final Logger logger = LogManager.getLogger("StatusLogger");
     public static SimpleDateFormat oldDateFormat = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault());
     public static SimpleDateFormat newDateFormat = new SimpleDateFormat("dd MMMM yyyy", Locale.getDefault());
-    public static void main(String[] args) throws ParseException, IOException, ClassNotFoundException, SQLException {
+    public static void main(String[] args) {
 
         // Fill in test data
         //CashDance.domain.TestData.loadTestData();

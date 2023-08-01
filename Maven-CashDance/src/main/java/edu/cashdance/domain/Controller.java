@@ -3,6 +3,8 @@ package edu.cashdance.domain;
 import edu.cashdance.SQL.SqlDataGetter;
 import edu.cashdance.App;
 
+import static edu.cashdance.App.logger;
+
 public class Controller {
     static SqlDataGetter sqlDataGetter = new SqlDataGetter();
 
@@ -21,6 +23,7 @@ public class Controller {
         try {
             choice = Integer.parseInt(App.myScan.nextLine());
         } catch (NumberFormatException exception) {
+            logger.error(exception.getMessage() + " this is error");
             exception.printStackTrace();
         }
 
@@ -109,6 +112,7 @@ public class Controller {
         try {
             choice = Integer.parseInt(App.myScan.nextLine());
         } catch (NumberFormatException exception) {
+            logger.error(exception.getMessage() + " this is error");
             exception.printStackTrace();
         }
         int indexDB;
@@ -157,6 +161,7 @@ public class Controller {
         try {
             choice = Integer.parseInt(App.myScan.nextLine());
         } catch (NumberFormatException exception) {
+            logger.error(exception.getMessage() + " this is error");
             exception.printStackTrace();
         }
         int indexDB;
