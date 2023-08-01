@@ -1,0 +1,19 @@
+2023-07-29 10:43:40,318 ERROR e.c.d.Methods [main] Unparseable date: "2"
+java.text.ParseException: Unparseable date: "2"
+	at java.text.DateFormat.parse(DateFormat.java:399) ~[?:?]
+	at edu.cashdance.domain.Methods.CbChanceBuilder(Methods.java:75) [classes/:?]
+	at edu.cashdance.domain.Controller.CbMenu(Controller.java:168) [classes/:?]
+	at edu.cashdance.domain.Controller.mainMenu(Controller.java:35) [classes/:?]
+	at edu.cashdance.App.main(App.java:42) [classes/:?]
+2023-08-01 06:28:51,364 INFO StatusLogger [main] Started creating a new CbChance
+2023-08-01 06:29:07,247 INFO StatusLogger [main] Unparseable date: "1"java.text.ParseException: Unparseable date: "1"this is info
+2023-08-01 06:29:07,249 ERROR StatusLogger [main] Unparseable date: "1"
+2023-08-01 06:30:37,831 INFO StatusLogger [main] Started creating a new CbChance
+2023-08-01 06:30:40,399 INFO StatusLogger [main] Unparseable date: "1"java.text.ParseException: Unparseable date: "1" this is info
+2023-08-01 06:30:40,400 ERROR StatusLogger [main] Unparseable date: "1"java.text.ParseException: Unparseable date: "1" this is error
+2023-08-01 06:32:26,660 INFO StatusLogger [main] Started creating a new CbChance
+2023-08-01 06:32:30,110 INFO StatusLogger [main] Unparseable date: "2"java.text.ParseException: Unparseable date: "2" this is info
+2023-08-01 06:32:30,111 ERROR StatusLogger [main] Unparseable date: "2"java.text.ParseException: Unparseable date: "2" this is error
+2023-08-01 06:47:25,603 INFO StatusLogger [main] Started creating a new CbChance
+2023-08-01 06:47:30,632 INFO StatusLogger [main] Unparseable date: "2"java.text.ParseException: Unparseable date: "2" this is info
+2023-08-01 06:47:30,633 ERROR StatusLogger [main] Unparseable date: "2"java.text.ParseException: Unparseable date: "2" this is error
