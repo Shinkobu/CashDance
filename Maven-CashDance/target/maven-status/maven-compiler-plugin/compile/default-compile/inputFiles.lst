@@ -1,6 +1,12 @@
 B:\IT\CashDance\Maven-CashDance\src\main\java\edu\cashdance\domain\User.java
 B:\IT\CashDance\Maven-CashDance\src\main\java\edu\cashdance\old\Database.java
+B:\IT\CashDance\Maven-CashDance\src\main\java\edu\cashdance\client\Client.java
+B:\IT\CashDance\Maven-CashDance\src\main\java\edu\cashdance\server\greet\EveningGreet.java
+B:\IT\CashDance\Maven-CashDance\src\main\java\edu\cashdance\server\greet\DayGreet.java
+B:\IT\CashDance\Maven-CashDance\src\main\java\edu\cashdance\server\greet\MorningGreet.java
+B:\IT\CashDance\Maven-CashDance\src\main\java\edu\cashdance\server\Server.java
 B:\IT\CashDance\Maven-CashDance\src\main\java\edu\cashdance\domain\CbChance.java
+B:\IT\CashDance\Maven-CashDance\src\main\java\edu\cashdance\server\Greetable.java
 B:\IT\CashDance\Maven-CashDance\src\main\java\edu\cashdance\domain\CbRepository.java
 B:\IT\CashDance\Maven-CashDance\src\main\java\edu\cashdance\SQL\SqlDataGetter.java
 B:\IT\CashDance\Maven-CashDance\src\main\java\edu\cashdance\SQL\ConnectionBuilder.java

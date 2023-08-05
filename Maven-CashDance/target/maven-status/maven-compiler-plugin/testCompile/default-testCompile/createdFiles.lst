@@ -1,1 +1,4 @@
+edu\cashdance\SimpleSocket.class
+edu\cashdance\SQL\SqlDataGetterTest.class
+edu\cashdance\domain\MethodsTest.class
 MyClassTest.class

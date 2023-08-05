@@ -38,20 +38,20 @@ public class Database {
 
     public static void showCbChancesDB() {
 
-        for (var element : CB_CHANCES_DATABASE) {
+        for (CbChance element : CB_CHANCES_DATABASE) {
             System.out.println(element.toString());
         }
     }
     public static void showCardDB() {
 
-        for (var element : CARD_DATABASE) {
+        for (Card element : CARD_DATABASE) {
             System.out.println(element.toString());
         }
     }
 
     public static void showCategoryDB() {
 
-        for (var element : CATEGORY_DATABASE) {
+        for (CbCategory element : CATEGORY_DATABASE) {
             System.out.println(element.toString());
         }
     }
