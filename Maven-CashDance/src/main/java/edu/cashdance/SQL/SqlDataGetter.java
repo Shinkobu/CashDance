@@ -15,7 +15,26 @@ import static edu.cashdance.App.logger;
 
 public class SqlDataGetter implements Repository {
 
-    private final ConnectionBuilder connectionBuilder = new ConnectionBuilder();
+    private ConnectionBuilder connectionBuilder;
+    public void setConnectionBuilder(ConnectionBuilder connectionBuilder) {
+        this.connectionBuilder = connectionBuilder;
+    }
+
+    private Connection getConnection() throws SQLException {
+     return connectionBuilder.getConnection();
+
+    }
+
+    // class loading to solve problem of driver in Tomcat
+//    public SqlDataGetter() {
+//        try{
+//            Class.forName("org.postgresql.Driver");
+//        }catch (Exception ex){
+//            ex.printStackTrace();
+//        }
+//    }
+
+//    private final PostgresConnectionBuilder postgresConnectionBuilder = new PostgresConnectionBuilder();
 
     @Override
     public Card findByName(String nameToFind) {
@@ -24,7 +43,7 @@ public class SqlDataGetter implements Repository {
 
     @Override
     public void showMyCards() {
-        try (Connection connection = ConnectionBuilder.getConnection()) {
+        try (Connection connection = connectionBuilder.getConnection()) {
 
             Statement stmt = connection.createStatement();
             ResultSet resultSet = stmt.executeQuery("SELECT * FROM cards ORDER BY id_card");
@@ -40,8 +59,8 @@ public class SqlDataGetter implements Repository {
     }
 
     @Override
-    public void addNewCard(Card card) {
-        try (Connection connection = ConnectionBuilder.getConnection()) {
+    public boolean addNewCard(Card card) {
+        try (Connection connection = connectionBuilder.getConnection()) {
             Statement stmt = connection.createStatement();
             stmt.executeUpdate("INSERT INTO cards (name_card, bank_name)\n" +
                     "VALUES\n" +
@@ -50,6 +69,7 @@ public class SqlDataGetter implements Repository {
             logger.error(e.getMessage() + " this is error");
             throw new RuntimeException(e);
         }
+        return true;
     }
 
 
@@ -64,7 +84,7 @@ public class SqlDataGetter implements Repository {
     @Override
     public void changeCard(int i, Card card) {
 
-        try (Connection connection = ConnectionBuilder.getConnection()) {
+        try (Connection connection = connectionBuilder.getConnection()) {
             Statement stmt = connection.createStatement();
             stmt.executeUpdate("UPDATE cards " +
                     "SET name_card = '" + card.getName() + "', bank_name = '" + card.getBankName() + "'" +
@@ -80,7 +100,7 @@ public class SqlDataGetter implements Repository {
 
     @Override
     public void deleteCard(int i) {
-        try (Connection connection = ConnectionBuilder.getConnection()) {
+        try (Connection connection = connectionBuilder.getConnection()) {
 
             Statement stmt = connection.createStatement();
             stmt.executeUpdate("DELETE FROM cards " +
@@ -94,7 +114,7 @@ public class SqlDataGetter implements Repository {
 
     @Override
     public void showMyCategories() {
-        try (Connection connection = ConnectionBuilder.getConnection()) {
+        try (Connection connection = connectionBuilder.getConnection()) {
             Statement stmt = connection.createStatement();
             ResultSet resultSet = stmt.executeQuery("SELECT * FROM categories");
             while (resultSet.next()) {
@@ -110,7 +130,7 @@ public class SqlDataGetter implements Repository {
 
     @Override
     public void addNewCategory(CbCategory category) {
-        try (Connection connection = ConnectionBuilder.getConnection()) {
+        try (Connection connection = connectionBuilder.getConnection()) {
             // transaction example
             connection.setAutoCommit(false);
             try {
@@ -139,7 +159,7 @@ public class SqlDataGetter implements Repository {
 
     @Override
     public void changeCategory(int i, CbCategory category) {
-        try (Connection connection = ConnectionBuilder.getConnection()) {
+        try (Connection connection = connectionBuilder.getConnection()) {
             Statement stmt = connection.createStatement();
             stmt.executeUpdate("UPDATE categories " +
                     "SET name_category = '" + category.getName() + "'" +
@@ -160,7 +180,7 @@ public class SqlDataGetter implements Repository {
 
     @Override
     public void deleteCategory(int i) {
-        try (Connection connection = ConnectionBuilder.getConnection()) {
+        try (Connection connection = connectionBuilder.getConnection()) {
 
             Statement stmt = connection.createStatement();
             stmt.executeUpdate("DELETE FROM categories " +
@@ -175,7 +195,7 @@ public class SqlDataGetter implements Repository {
     // TODO: 22.07.2023 add parameters to showCbChances
     @Override
     public void showCbChances() {
-        try (Connection connection = ConnectionBuilder.getConnection()) {
+        try (Connection connection = connectionBuilder.getConnection()) {
 
             ZoneId timezone = ZoneId.of(ZoneId.systemDefault().getId());
             LocalDate ld = LocalDate.now(timezone);
@@ -219,7 +239,7 @@ public class SqlDataGetter implements Repository {
     }
 
     public void addNewCbChance(CbChance cbChance) {
-        try (Connection connection = ConnectionBuilder.getConnection()) {
+        try (Connection connection = connectionBuilder.getConnection()) {
             // transaction example
             connection.setAutoCommit(false);
             try {
@@ -247,7 +267,7 @@ public class SqlDataGetter implements Repository {
     }
 
     public void changeCbChance (int i, CbChance cbChance) {
-        try (Connection connection = ConnectionBuilder.getConnection()) {
+        try (Connection connection = connectionBuilder.getConnection()) {
             // transaction example
             connection.setAutoCommit(false);
             try {
@@ -279,7 +299,7 @@ public class SqlDataGetter implements Repository {
     }
 
     public void deleteCbChance(int i) {
-        try (Connection connection = ConnectionBuilder.getConnection()) {
+        try (Connection connection = connectionBuilder.getConnection()) {
 //todo answer if no CbChance to delete (wrong id)
             PreparedStatement pSt = connection.prepareStatement("DELETE FROM cbChances " +
                     "WHERE id_chance = ?");

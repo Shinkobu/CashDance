@@ -7,7 +7,7 @@ import java.util.Date;
 public class Card {
     private String name;
     private String bankName;
-    private Date expireDate;
+//    private Date expireDate;
     private int indexInDb;
 
     public int getIndexInDb() {
@@ -28,7 +28,7 @@ public class Card {
         return "CashDance.domain.Card{" +
                 "name='" + name + '\'' +
                 ", bankName='" + bankName + '\'' +
-                ", expireDate=" + App.newDateFormat.format(expireDate) +
+//                ", expireDate=" + App.newDateFormat.format(expireDate) +
                 '}';
     }
 

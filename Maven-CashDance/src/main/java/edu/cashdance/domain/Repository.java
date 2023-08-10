@@ -1,14 +1,11 @@
 package edu.cashdance.domain;
 
-import edu.cashdance.domain.Card;
-import edu.cashdance.domain.CbCategory;
-
 public interface Repository {
 
     Card findByName(String nameToFind);
 
     void showMyCards();
-    void addNewCard(Card card);
+    boolean addNewCard(Card card);
     int findCard();
     void changeCard(int i, Card card);
     void deleteCard(int i);

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="edu.cashdance.SQL.SqlDataGetterTest" time="1.094" errors="0" skipped="0">
+<testsuite tests="1" failures="0" name="edu.cashdance.SQL.SqlDataGetterTest" time="0.768" errors="0" skipped="0">
   <properties>
     <property name="idea.version" value="2022.1.3"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -38,7 +38,7 @@
     <property name="os.version" value="10.0"/>
     <property name="user.home" value="C:\Users\user"/>
     <property name="user.timezone" value="GMT+03:00"/>
-    <property name="file.encoding" value="windows-1251"/>
+    <property name="file.encoding" value="UTF-8"/>
     <property name="java.specification.version" value="18"/>
     <property name="user.name" value="user"/>
     <property name="java.class.path" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.3.3\plugins\maven\lib\maven3\boot\plexus-classworlds-2.6.0.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.3.3\plugins\maven\lib\maven3\boot\plexus-classworlds.license"/>
@@ -60,5 +60,5 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="edu.cashdance.SQL.SqlDataGetterTest" name="addNewCbChance" time="1.094"/>
+  <testcase classname="edu.cashdance.SQL.SqlDataGetterTest" name="addNewCbChance" time="0.768"/>
 </testsuite>

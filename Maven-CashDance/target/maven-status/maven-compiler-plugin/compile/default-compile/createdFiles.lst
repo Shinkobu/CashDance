@@ -5,8 +5,10 @@ edu\cashdance\domain\User.class
 edu\cashdance\old\Database.class
 edu\cashdance\client\Client.class
 edu\cashdance\server\greet\MorningGreet.class
+edu\cashdance\SQL\PoolConnectionBuilder.class
 edu\cashdance\App.class
 edu\cashdance\domain\Methods.class
+edu\cashdance\web\MyServlet.class
 edu\cashdance\server\greet\DayGreet.class
 edu\cashdance\SQL\SqlDataGetter.class
 edu\cashdance\SQL\ConnectionBuilder.class
@@ -15,6 +17,7 @@ edu\cashdance\domain\DateFormatMaker.class
 edu\cashdance\server\greet\EveningGreet.class
 edu\cashdance\domain\Repository.class
 edu\cashdance\domain\CbRepository.class
+edu\cashdance\web\CardServlet.class
 edu\cashdance\server\Server.class
 edu\cashdance\domain\CbCategory.class
 edu\cashdance\server\SimpleServer.class

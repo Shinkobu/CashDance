@@ -11,8 +11,8 @@ public class SimpleSocket {
     @Test
     public void simpleSocket() throws IOException {
 //        Socket socket = new Socket("java-course.ru",80);
-//        Socket socket = new Socket("localhost",8080);
-        Socket socket = new Socket("ya.ru",8080);
+        Socket socket = new Socket("localhost",8080);
+//        Socket socket = new Socket("ya.ru",8080);
         InputStream inputStream = socket.getInputStream();
         OutputStream outputStream = socket.getOutputStream();
 

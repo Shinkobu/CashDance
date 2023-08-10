@@ -33,9 +33,10 @@ public class CbRepository implements Repository {
     }
 
     @Override
-    public void addNewCard(Card card) {
+    public boolean addNewCard(Card card) {
         Database.addCard(card);
         System.out.println("\nКарта успешно добавлена в базу данных\n");
+        return true;
     }
 
     @Override

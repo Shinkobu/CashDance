@@ -12,12 +12,13 @@ import static org.junit.Assert.*;
 public class SqlDataGetterTest {
 
     /**
-     * Throws exception, because rate is null
+     * First test. Throws exception, because rate is null
      * @throws ParseException
      */
     @Test (expected = RuntimeException.class)
     public void addNewCbChance() throws ParseException {
         SqlDataGetter sqlDataGetter = new SqlDataGetter();
+        sqlDataGetter.setConnectionBuilder(new DirectConnectionBuilder());
 
         sqlDataGetter.addNewCbChance(new CbChance( "test CbChance", 1,
                 App.oldDateFormat.parse("01-07-2023"),

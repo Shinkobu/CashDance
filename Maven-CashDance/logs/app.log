@@ -29,3 +29,99 @@ java.text.ParseException: Unparseable date: "2"
   Подробности: Ошибочная строка содержит (19, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error
 2023-08-05 07:22:59,515 ERROR StatusLogger [main] org.postgresql.util.PSQLException: ОШИБКА: значение NULL в столбце "rate" отношения "cbchances" нарушает ограничение NOT NULL
   Подробности: Ошибочная строка содержит (19, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error
+2023-08-05 07:45:16,300 ERROR StatusLogger [main] ОШИБКА: значение NULL в столбце "rate" отношения "cbchances" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (21, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error
+2023-08-05 07:45:16,309 ERROR StatusLogger [main] org.postgresql.util.PSQLException: ОШИБКА: значение NULL в столбце "rate" отношения "cbchances" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (21, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error
+2023-08-05 08:27:24,937 ERROR StatusLogger [main] ОШИБКА: значение NULL в столбце "rate" отношения "cbchances" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (23, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error
+2023-08-05 08:27:24,943 ERROR StatusLogger [main] org.postgresql.util.PSQLException: ОШИБКА: значение NULL в столбце "rate" отношения "cbchances" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (23, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error
+2023-08-05 08:35:16,367 ERROR StatusLogger [main] ОШИБКА: значение NULL в столбце "rate" отношения "cbchances" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (25, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error
+2023-08-05 08:35:16,367 ERROR StatusLogger [main] org.postgresql.util.PSQLException: ОШИБКА: значение NULL в столбце "rate" отношения "cbchances" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (25, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error
+2023-08-05 08:45:36,802 ERROR StatusLogger [main] ОШИБКА: значение NULL в столбце "rate" отношения "cbchances" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (27, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error
+2023-08-05 08:45:36,802 ERROR StatusLogger [main] org.postgresql.util.PSQLException: ОШИБКА: значение NULL в столбце "rate" отношения "cbchances" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (27, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error
+2023-08-05 08:48:27,050 ERROR StatusLogger [main] ОШИБКА: значение NULL в столбце "rate" отношения "cbchances" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (29, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error
+2023-08-05 08:48:27,050 ERROR StatusLogger [main] org.postgresql.util.PSQLException: ОШИБКА: значение NULL в столбце "rate" отношения "cbchances" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (29, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error
+2023-08-05 08:51:10,082 ERROR StatusLogger [main] ОШИБКА: значение NULL в столбце "rate" отношения "cbchances" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (31, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error
+2023-08-05 08:51:10,082 ERROR StatusLogger [main] org.postgresql.util.PSQLException: ОШИБКА: значение NULL в столбце "rate" отношения "cbchances" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (31, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error
+2023-08-05 08:55:09,649 ERROR StatusLogger [main] ОШИБКА: значение NULL в столбце "rate" отношения "cbchances" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (33, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error
+2023-08-05 08:55:09,656 ERROR StatusLogger [main] org.postgresql.util.PSQLException: ОШИБКА: значение NULL в столбце "rate" отношения "cbchances" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (33, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error
+2023-08-05 09:02:32,633 ERROR StatusLogger [main] ОШИБКА: значение NULL в столбце "rate" отношения "cbchances" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (35, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error
+2023-08-05 09:02:32,646 ERROR StatusLogger [main] org.postgresql.util.PSQLException: ОШИБКА: значение NULL в столбце "rate" отношения "cbchances" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (35, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error
+2023-08-05 09:06:07,407 ERROR StatusLogger [main] ОШИБКА: значение NULL в столбце "rate" отношения "cbchances" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (37, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error
+2023-08-05 09:06:07,407 ERROR StatusLogger [main] org.postgresql.util.PSQLException: ОШИБКА: значение NULL в столбце "rate" отношения "cbchances" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (37, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error
+2023-08-07 19:23:30,617 ERROR StatusLogger [main] ОШИБКА: значение NULL в столбце "rate" отношения "cbchances" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (39, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error
+2023-08-07 19:23:30,624 ERROR StatusLogger [main] org.postgresql.util.PSQLException: ОШИБКА: значение NULL в столбце "rate" отношения "cbchances" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (39, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error
+2023-08-10 15:48:12,232 ERROR StatusLogger [main] ОШИБКА: значение NULL в столбце "rate" отношения "cbchances" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (41, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error
+2023-08-10 15:48:12,237 ERROR StatusLogger [main] org.postgresql.util.PSQLException: ОШИБКА: значение NULL в столбце "rate" отношения "cbchances" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (41, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error
+2023-08-10 16:06:55,922 ERROR StatusLogger [main] ОШИБКА: значение NULL в столбце "rate" отношения "cbchances" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (43, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error
+2023-08-10 16:06:55,931 ERROR StatusLogger [main] org.postgresql.util.PSQLException: ОШИБКА: значение NULL в столбце "rate" отношения "cbchances" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (43, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error
+2023-08-10 16:13:17,653 ERROR StatusLogger [main] ОШИБКА: значение NULL в столбце "rate" отношения "cbchances" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (45, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error
+2023-08-10 16:13:17,659 ERROR StatusLogger [main] org.postgresql.util.PSQLException: ОШИБКА: значение NULL в столбце "rate" отношения "cbchances" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (45, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error
+2023-08-10 16:15:49,397 ERROR StatusLogger [main] ОШИБКА: значение NULL в столбце "rate" отношения "cbchances" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (47, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error
+2023-08-10 16:15:49,401 ERROR StatusLogger [main] org.postgresql.util.PSQLException: ОШИБКА: значение NULL в столбце "rate" отношения "cbchances" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (47, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error
+2023-08-10 16:17:28,701 ERROR StatusLogger [main] ОШИБКА: значение NULL в столбце "rate" отношения "cbchances" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (49, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error
+2023-08-10 16:17:28,705 ERROR StatusLogger [main] org.postgresql.util.PSQLException: ОШИБКА: значение NULL в столбце "rate" отношения "cbchances" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (49, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error
+2023-08-10 16:18:59,766 ERROR StatusLogger [main] ОШИБКА: значение NULL в столбце "rate" отношения "cbchances" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (51, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error
+2023-08-10 16:18:59,772 ERROR StatusLogger [main] org.postgresql.util.PSQLException: ОШИБКА: значение NULL в столбце "rate" отношения "cbchances" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (51, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error
+2023-08-10 16:20:21,707 ERROR StatusLogger [main] ОШИБКА: значение NULL в столбце "rate" отношения "cbchances" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (53, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error
+2023-08-10 16:20:21,716 ERROR StatusLogger [main] org.postgresql.util.PSQLException: ОШИБКА: значение NULL в столбце "rate" отношения "cbchances" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (53, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error
+2023-08-10 16:24:16,910 ERROR StatusLogger [main] ОШИБКА: значение NULL в столбце "rate" отношения "cbchances" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (55, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error
+2023-08-10 16:24:16,916 ERROR StatusLogger [main] org.postgresql.util.PSQLException: ОШИБКА: значение NULL в столбце "rate" отношения "cbchances" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (55, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error
+2023-08-10 17:57:15,198 ERROR StatusLogger [main] ОШИБКА: значение NULL в столбце "rate" отношения "cbchances" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (57, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error
+2023-08-10 17:57:15,203 ERROR StatusLogger [main] org.postgresql.util.PSQLException: ОШИБКА: значение NULL в столбце "rate" отношения "cbchances" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (57, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error
+2023-08-10 18:31:56,577 ERROR StatusLogger [main] ОШИБКА: значение NULL в столбце "rate" отношения "cbchances" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (58, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error
+2023-08-10 18:31:56,584 ERROR StatusLogger [main] org.postgresql.util.PSQLException: ОШИБКА: значение NULL в столбце "rate" отношения "cbchances" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (58, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error
+2023-08-10 18:34:55,692 ERROR StatusLogger [main] ОШИБКА: значение NULL в столбце "rate" отношения "cbchances" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (59, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error
+2023-08-10 18:34:55,699 ERROR StatusLogger [main] org.postgresql.util.PSQLException: ОШИБКА: значение NULL в столбце "rate" отношения "cbchances" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (59, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error
+2023-08-10 18:35:04,098 ERROR StatusLogger [main] ОШИБКА: значение NULL в столбце "rate" отношения "cbchances" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (60, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error
+2023-08-10 18:35:04,103 ERROR StatusLogger [main] org.postgresql.util.PSQLException: ОШИБКА: значение NULL в столбце "rate" отношения "cbchances" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (60, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error
+2023-08-10 18:39:33,274 ERROR StatusLogger [main] ОШИБКА: значение NULL в столбце "rate" отношения "cbchances" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (62, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error
+2023-08-10 18:39:33,283 ERROR StatusLogger [main] org.postgresql.util.PSQLException: ОШИБКА: значение NULL в столбце "rate" отношения "cbchances" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (62, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error
+2023-08-10 18:48:30,670 ERROR StatusLogger [main] ОШИБКА: значение NULL в столбце "rate" отношения "cbchances" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (64, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error
+2023-08-10 18:48:30,674 ERROR StatusLogger [main] org.postgresql.util.PSQLException: ОШИБКА: значение NULL в столбце "rate" отношения "cbchances" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (64, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error

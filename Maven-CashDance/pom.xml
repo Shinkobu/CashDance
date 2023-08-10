@@ -45,6 +45,13 @@
             <version>42.6.0</version>
         </dependency>
 
+<!--        to communicate with postgresql in package on Tomcat-->
+        <dependency>
+            <groupId>postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>9.3-1102.jdbc41</version>
+        </dependency>
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -97,13 +104,20 @@
 
         <dependency>
             <groupId>javax</groupId>
-            <artifactId>javaee-api</artifactId>
+            <artifactId>javaee-api</artifactId> <!-- this library contains HttpServlet-->
             <version>8.0.1</version>
             <scope>provided</scope>  <!-- will not be in .war-->
         </dependency>
 
 
     </dependencies>
+    <repositories>
+        <repository>
+            <id>clojars</id>
+            <name>Clojars</name>
+            <url>https://repo.clojars.org/</url>
+        </repository>
+    </repositories>
 
 
 </project>

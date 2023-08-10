@@ -1,5 +1,6 @@
 import edu.cashdance.App;
-import edu.cashdance.SQL.ConnectionBuilder;
+import edu.cashdance.SQL.DirectConnectionBuilder;
+import edu.cashdance.SQL.PostgresConnectionBuilder;
 import edu.cashdance.SQL.SqlDataGetter;
 import edu.cashdance.domain.CbChance;
 import org.junit.Test;
@@ -26,7 +27,7 @@ public class MyClassTest {
         List<String> str = Files.readAllLines(Paths.get(url.toURI()));
         String sql = str.stream().collect(Collectors.joining());
 
-        try (Connection connection = ConnectionBuilder.getConnection();
+        try (Connection connection = PostgresConnectionBuilder.getConnection();
              Statement statement = connection.createStatement()
         ) {
             statement.executeUpdate(sql);
@@ -39,6 +40,8 @@ public class MyClassTest {
     @Test
     public void testAddNewCard() throws ParseException {
         SqlDataGetter sqlDataGetter = new SqlDataGetter();
+        sqlDataGetter.setConnectionBuilder(new DirectConnectionBuilder());
+
         sqlDataGetter.addNewCbChance(new CbChance( "test CbChance", 1,
                 App.oldDateFormat.parse("01-07-2023"),
                 App.oldDateFormat.parse("31-07-2023"),
