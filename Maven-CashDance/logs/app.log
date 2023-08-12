@@ -125,3 +125,11 @@ java.text.ParseException: Unparseable date: "2"
   Подробности: Ошибочная строка содержит (64, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error
 2023-08-10 18:48:30,674 ERROR StatusLogger [main] org.postgresql.util.PSQLException: ОШИБКА: значение NULL в столбце "rate" отношения "cbchances" нарушает ограничение NOT NULL
   Подробности: Ошибочная строка содержит (64, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error
+2023-08-12 07:45:51,306 ERROR StatusLogger [main] ОШИБКА: значение NULL в столбце "rate" отношения "cbchances" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (66, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error
+2023-08-12 07:45:51,313 ERROR StatusLogger [main] org.postgresql.util.PSQLException: ОШИБКА: значение NULL в столбце "rate" отношения "cbchances" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (66, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error
+2023-08-12 07:56:20,584 ERROR StatusLogger [main] ОШИБКА: значение NULL в столбце "rate" отношения "cbchances" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (68, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error
+2023-08-12 07:56:20,588 ERROR StatusLogger [main] org.postgresql.util.PSQLException: ОШИБКА: значение NULL в столбце "rate" отношения "cbchances" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (68, test CbChance, 1, 2023-07-01, 2023-07-31, 1, null). this is error

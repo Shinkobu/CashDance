@@ -6,6 +6,7 @@ edu\cashdance\old\Database.class
 edu\cashdance\client\Client.class
 edu\cashdance\server\greet\MorningGreet.class
 edu\cashdance\SQL\PoolConnectionBuilder.class
+edu\cashdance\web\MyJerseyServlet.class
 edu\cashdance\App.class
 edu\cashdance\domain\Methods.class
 edu\cashdance\web\MyServlet.class

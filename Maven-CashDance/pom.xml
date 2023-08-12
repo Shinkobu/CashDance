@@ -14,6 +14,7 @@
         <maven.compiler.target>18</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <slf4j.version>2.0.7</slf4j.version>
+        <jersey.version>3.1.1</jersey.version>
     </properties>
 
     <build>
@@ -109,6 +110,17 @@
             <scope>provided</scope>  <!-- will not be in .war-->
         </dependency>
 
+        <dependency>
+            <groupId>org.glassfish.jersey.containers</groupId>
+            <artifactId>jersey-container-servlet</artifactId> <!-- set of classes to parse Http request -->
+            <version>${jersey.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.glassfish.jersey.inject</groupId>
+            <artifactId>jersey-hk2</artifactId> <!-- to make annotations work properly-->
+            <version>${jersey.version}</version>
+        </dependency>
 
     </dependencies>
     <repositories>
