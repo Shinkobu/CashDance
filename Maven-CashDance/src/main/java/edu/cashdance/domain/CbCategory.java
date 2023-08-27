@@ -1,11 +1,13 @@
 package edu.cashdance.domain;
 
 public class CbCategory {
-    String name;
-
+    private String name;
 
     public CbCategory(String name) {
         this.name = name;
+    }
+
+    public CbCategory() {
 
     }
 
@@ -18,5 +20,9 @@ public class CbCategory {
 
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

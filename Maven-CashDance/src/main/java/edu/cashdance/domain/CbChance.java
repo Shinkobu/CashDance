@@ -1,12 +1,18 @@
 package edu.cashdance.domain;
 
-import edu.cashdance.App;
+import edu.cashdance.CashDanceApp;
 
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Date;
 
 public class CbChance {
     private int categoryID;
+
+    public CbChance() {
+
+    }
 
     public int getCategoryID() {
         return categoryID;
@@ -22,9 +28,11 @@ public class CbChance {
 
     private int cardID;
     private String name;
-    private Card card;
-    private Date startDate;
-    private Date endDate;
+    private BankCard bankCard;
+    @XmlJavaTypeAdapter(value = LocalDateAdapter.class)
+    private LocalDate startDate;
+    @XmlJavaTypeAdapter(value = LocalDateAdapter.class)
+    private LocalDate endDate;
     private String userComment;
     private CbCategory category;
     private Double rate;
@@ -44,27 +52,27 @@ public class CbChance {
         this.name = name;
     }
 
-    public Card getCard() {
-        return card;
+    public BankCard getCard() {
+        return bankCard;
     }
 
-    public void setCard(Card card) {
-        this.card = card;
+    public void setCard(BankCard bankCard) {
+        this.bankCard = bankCard;
     }
 
-    public Date getStartDate() {
+    public LocalDate getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(LocalDate startDate) {
         this.startDate = startDate;
     }
 
-    public Date getEndDate() {
+    public LocalDate getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Date endDate) {
+    public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
     }
 
@@ -81,21 +89,41 @@ public class CbChance {
     public String toString() {
         return name + " - Категория "+ category.getName() +
                 ", ставка " + rate*100 + " %" +
-                ", действует с " + App.newDateFormat.format(startDate) +
-                ", до " + App.newDateFormat.format(endDate) +
-                " по карте " + card.getName();
+                ", действует с " + startDate +
+                ", до " + endDate +
+                " по карте " + bankCard.getName();
     }
 
-    public CbChance(String name, Card card, Date startDate, Date endDate, CbCategory category, Double rate) {
+    public void setBankCard(BankCard bankCard) {
+        this.bankCard = bankCard;
+    }
+
+    public void setCategory(CbCategory category) {
+        this.category = category;
+    }
+
+    public void setRate(Double rate) {
+        this.rate = rate;
+    }
+
+    public BankCard getBankCard() {
+        return bankCard;
+    }
+
+    public CbCategory getCategory() {
+        return category;
+    }
+
+    public CbChance(String name, BankCard bankCard, LocalDate startDate, LocalDate endDate, CbCategory category, Double rate) {
         this.name = name;
-        this.card = card;
+        this.bankCard = bankCard;
         this.startDate = startDate;
         this.endDate = endDate;
         this.category = category;
         this.rate = rate;
     }
 
-    public CbChance(String name, int cardID, Date startDate, Date endDate, int categoryID, Double rate) {
+    public CbChance(String name, int cardID, LocalDate startDate, LocalDate endDate, int categoryID, Double rate) {
         this.name = name;
         this.cardID = cardID;
         this.startDate = startDate;

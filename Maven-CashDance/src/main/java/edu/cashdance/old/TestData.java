@@ -1,10 +1,11 @@
 package edu.cashdance.old;
 
-import edu.cashdance.App;
+import edu.cashdance.CashDanceApp;
 import edu.cashdance.domain.*;
-import edu.cashdance.old.Database;
 
 import java.text.ParseException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class TestData {
     /**
@@ -20,16 +21,16 @@ public class TestData {
         CbCategory cat5 = new CbCategory("Бытовая техника");
         CbCategory cat6 = new CbCategory("На всё");
 
-        Card card1 = new Card("Карта Сбера", "Сбербанк");
-        Card card2 = new Card("Карта Альфы", "Альфа-банк");
-        Card card3 = new Card("Карта Тинькофф", "Тинькофф");
-        Card card4 = new Card("Карта Сбера вирт", "Сбербанк");
+        BankCard bankCard1 = new BankCard("Карта Сбера", "Сбербанк");
+        BankCard bankCard2 = new BankCard("Карта Альфы", "Альфа-банк");
+        BankCard bankCard3 = new BankCard("Карта Тинькофф", "Тинькофф");
+        BankCard bankCard4 = new BankCard("Карта Сбера вирт", "Сбербанк");
 
-        Repository myRepo = new CbRepository();
-        myRepo.addNewCard(card1);
-        myRepo.addNewCard(card2);
-        myRepo.addNewCard(card3);
-        myRepo.addNewCard(card4);
+        ConsoleRepository myRepo = new CbConsoleRepository();
+        myRepo.addNewCard(bankCard1);
+        myRepo.addNewCard(bankCard2);
+        myRepo.addNewCard(bankCard3);
+        myRepo.addNewCard(bankCard4);
 
         myRepo.addNewCategory(cat1);
         myRepo.addNewCategory(cat2);
@@ -38,20 +39,23 @@ public class TestData {
         myRepo.addNewCategory(cat5);
         myRepo.addNewCategory(cat6);
 
+        LocalDate date = LocalDate.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy MM dd");
+        String text = date.format(formatter);
+        LocalDate parsedDate = LocalDate.parse("01-07-2023", CashDanceApp.oldDateFormatter);
 
-
-        CbChance chance1 = new CbChance("тестовый шанс 1", card1, App.oldDateFormat.parse("01-07-2023"),
-                App.oldDateFormat.parse("31-07-2023"), cat1, 0.01);
-        CbChance chance2 = new CbChance("тестовый шанс 2", card2, App.oldDateFormat.parse("01-01-2012"),
-                App.oldDateFormat.parse("01-01-2012"), cat2, 0.1);
-        CbChance chance3 = new CbChance("тестовый шанс 3", card3, App.oldDateFormat.parse("01-01-2012"),
-                App.oldDateFormat.parse("01-01-2012"), cat3, 0.15);
-        CbChance chance4 = new CbChance("тестовый шанс 4", card1, App.oldDateFormat.parse("01-01-2012"),
-                App.oldDateFormat.parse("01-01-2012"), cat4, 0.005);
-        CbChance chance5 = new CbChance("тестовый шанс 5", card4, App.oldDateFormat.parse("01-01-2012"),
-                App.oldDateFormat.parse("01-01-2012"), cat5, 0.30);
-        CbChance chance6 = new CbChance("тестовый шанс 6", card2, App.oldDateFormat.parse("01-01-2012"),
-                App.oldDateFormat.parse("01-01-2012"), cat5, 0.30);
+        CbChance chance1 = new CbChance("тестовый шанс 1", bankCard1, LocalDate.parse("01-07-2023", CashDanceApp.oldDateFormatter),
+                LocalDate.parse("31-07-2023", CashDanceApp.oldDateFormatter), cat1, 0.01);
+        CbChance chance2 = new CbChance("тестовый шанс 2", bankCard2, LocalDate.parse("01-01-2012", CashDanceApp.oldDateFormatter),
+                LocalDate.parse("01-01-2012", CashDanceApp.oldDateFormatter), cat2, 0.1);
+        CbChance chance3 = new CbChance("тестовый шанс 3", bankCard3, LocalDate.parse("01-01-2012", CashDanceApp.oldDateFormatter),
+                LocalDate.parse("01-01-2012", CashDanceApp.oldDateFormatter), cat3, 0.15);
+        CbChance chance4 = new CbChance("тестовый шанс 4", bankCard1, LocalDate.parse("01-01-2012", CashDanceApp.oldDateFormatter),
+                LocalDate.parse("01-01-2012", CashDanceApp.oldDateFormatter), cat4, 0.005);
+        CbChance chance5 = new CbChance("тестовый шанс 5", bankCard4, LocalDate.parse("01-01-2012", CashDanceApp.oldDateFormatter),
+                LocalDate.parse("01-01-2012", CashDanceApp.oldDateFormatter), cat5, 0.30);
+        CbChance chance6 = new CbChance("тестовый шанс 6", bankCard2, LocalDate.parse("01-01-2012", CashDanceApp.oldDateFormatter),
+                LocalDate.parse("01-01-2012", CashDanceApp.oldDateFormatter), cat5, 0.30);
 
 
         Database.addCbProposal(chance1);

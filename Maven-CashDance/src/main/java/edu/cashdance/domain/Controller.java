@@ -1,12 +1,12 @@
 package edu.cashdance.domain;
 
-import edu.cashdance.SQL.SqlDataGetter;
-import edu.cashdance.App;
+import edu.cashdance.CashDanceApp;
+import edu.cashdance.SQL.ConsoleSqlDataGetter;
 
-import static edu.cashdance.App.logger;
+import static edu.cashdance.CashDanceApp.logger;
 
 public class Controller {
-    static SqlDataGetter sqlDataGetter = new SqlDataGetter();
+    static ConsoleSqlDataGetter consoleSqlDataGetter = new ConsoleSqlDataGetter();
 
     public static void mainMenu() {
 
@@ -21,7 +21,7 @@ public class Controller {
 
         int choice = 0;
         try {
-            choice = Integer.parseInt(App.myScan.nextLine());
+            choice = Integer.parseInt(CashDanceApp.myScan.nextLine());
         } catch (NumberFormatException exception) {
             logger.error(exception.getMessage() + " this is error");
             exception.printStackTrace();
@@ -44,7 +44,7 @@ public class Controller {
     }
 
     public static void cardMenu() {
-        sqlDataGetter.showMyCards();
+        consoleSqlDataGetter.showMyCards();
         System.out.println("\nВыберите действие\n");
         System.out.println("" +
                 "22 - Добавить банковскую карту\n" +
@@ -56,33 +56,33 @@ public class Controller {
         int choice = 0;
         // todo make better parseInt
         try {
-            choice = Integer.parseInt(App.myScan.nextLine());
+            choice = Integer.parseInt(CashDanceApp.myScan.nextLine());
         } catch (NumberFormatException exception) {
             exception.printStackTrace();
         }
         int indexDB;
-        Card tempCard;
+        BankCard tempBankCard;
 
         switch (choice) {
 
             case 22:
 
-                tempCard = Methods.createNewCard(); // создаёт в диалоге новую карту
-                sqlDataGetter.addNewCard(tempCard);// записывает карту через репо в БД
+                tempBankCard = Methods.createNewCard(); // создаёт в диалоге новую карту
+                consoleSqlDataGetter.addNewCard(tempBankCard);// записывает карту через репо в БД
                 System.out.println("\nКарта успешно добавлена в базу данных\n");
                 System.out.println("База данных имеет вид:\n");
 
                 cardMenu();
                 break;
             case 33:
-                indexDB = sqlDataGetter.findCard();  // поиск карты для замены
-                tempCard = Methods.createNewCard(); // создаёт в диалоге новую карту
-                sqlDataGetter.changeCard(indexDB,tempCard); // замена старой карты на новую
+                indexDB = consoleSqlDataGetter.findCard();  // поиск карты для замены
+                tempBankCard = Methods.createNewCard(); // создаёт в диалоге новую карту
+                consoleSqlDataGetter.changeCard(indexDB, tempBankCard); // замена старой карты на новую
                 cardMenu();
                 break;
             case 44:
-                indexDB = sqlDataGetter.findCard();  // поиск карты для удаления
-                sqlDataGetter.deleteCard(indexDB); // удаление карты из БД
+                indexDB = consoleSqlDataGetter.findCard();  // поиск карты для удаления
+                consoleSqlDataGetter.deleteCard(indexDB); // удаление карты из БД
                 cardMenu();
                 break;
             case 99:
@@ -97,7 +97,7 @@ public class Controller {
 
     public static void categoryMenu() {
 
-        sqlDataGetter.showMyCategories();
+        consoleSqlDataGetter.showMyCategories();
 
         System.out.println("\nВыберите действие\n");
         System.out.println("" +
@@ -110,7 +110,7 @@ public class Controller {
         int choice = 0;
         // todo make better parseInt
         try {
-            choice = Integer.parseInt(App.myScan.nextLine());
+            choice = Integer.parseInt(CashDanceApp.myScan.nextLine());
         } catch (NumberFormatException exception) {
             logger.error(exception.getMessage() + " this is error");
             exception.printStackTrace();
@@ -123,18 +123,18 @@ public class Controller {
             case 22:
 
                 tempCategory = Methods.createNewCategory(); // создаёт в диалоге новую категорию
-                sqlDataGetter.addNewCategory(tempCategory);// записывает категорию через репо в БД
+                consoleSqlDataGetter.addNewCategory(tempCategory);// записывает категорию через репо в БД
                 categoryMenu();
                 break;
             case 33:
-                indexDB = sqlDataGetter.findCategory();  // поиск категории для замены
+                indexDB = consoleSqlDataGetter.findCategory();  // поиск категории для замены
                 tempCategory = Methods.createNewCategory(); // создаёт в диалоге новую категорию
-                sqlDataGetter.changeCategory(indexDB,tempCategory); // замена старой категории на новую
+                consoleSqlDataGetter.changeCategory(indexDB,tempCategory); // замена старой категории на новую
                 categoryMenu();
                 break;
             case 44:
-                indexDB = sqlDataGetter.findCategory(); // поиск категории для удаления
-                sqlDataGetter.deleteCategory(indexDB); // удаление категории из БД
+                indexDB = consoleSqlDataGetter.findCategory(); // поиск категории для удаления
+                consoleSqlDataGetter.deleteCategory(indexDB); // удаление категории из БД
                 categoryMenu();
                 break;
             case 99:
@@ -147,7 +147,7 @@ public class Controller {
         }
     }
     public static void CbMenu() {
-        sqlDataGetter.showCbChances();
+        consoleSqlDataGetter.showCbChances();
         System.out.println("\nВыберите действие\n");
         System.out.println("" +
                 "22 - Добавить кэшбек шанс\n" +
@@ -159,7 +159,7 @@ public class Controller {
         int choice = 0;
         // todo make better parseInt
         try {
-            choice = Integer.parseInt(App.myScan.nextLine());
+            choice = Integer.parseInt(CashDanceApp.myScan.nextLine());
         } catch (NumberFormatException exception) {
             logger.error(exception.getMessage() + " this is error");
             exception.printStackTrace();
@@ -171,21 +171,21 @@ public class Controller {
 
             case 22:
                 cbChance = Methods.CbChanceBuilder();
-                sqlDataGetter.addNewCbChance(cbChance);
+                consoleSqlDataGetter.addNewCbChance(cbChance);
                 System.out.println("\nКэшбек успешно добавлен в базу данных\n");
                 System.out.println("База данных имеет вид:\n");
 
                 CbMenu();
                 break;
             case 33:
-                indexDB = sqlDataGetter.findCbChance();
+                indexDB = consoleSqlDataGetter.findCbChance();
                 CbChance tempCbChance = Methods.CbChanceBuilder();
-                sqlDataGetter.changeCbChance(indexDB,tempCbChance);
+                consoleSqlDataGetter.changeCbChance(indexDB,tempCbChance);
                 CbMenu();
                 break;
             case 44:
-                indexDB = sqlDataGetter.findCbChance();
-                sqlDataGetter.deleteCbChance(indexDB);
+                indexDB = consoleSqlDataGetter.findCbChance();
+                consoleSqlDataGetter.deleteCbChance(indexDB);
                 CbMenu();
                 break;
             case 99:

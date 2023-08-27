@@ -1,7 +1,7 @@
-import edu.cashdance.App;
+import edu.cashdance.CashDanceApp;
 import edu.cashdance.SQL.DirectConnectionBuilder;
 import edu.cashdance.SQL.PostgresConnectionBuilder;
-import edu.cashdance.SQL.SqlDataGetter;
+import edu.cashdance.SQL.ConsoleSqlDataGetter;
 import edu.cashdance.domain.CbChance;
 import org.junit.Test;
 
@@ -14,6 +14,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.ParseException;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -39,12 +40,12 @@ public class MyClassTest {
 
     @Test
     public void testAddNewCard() throws ParseException {
-        SqlDataGetter sqlDataGetter = new SqlDataGetter();
-        sqlDataGetter.setConnectionBuilder(new DirectConnectionBuilder());
+        ConsoleSqlDataGetter consoleSqlDataGetter = new ConsoleSqlDataGetter();
+        consoleSqlDataGetter.setConnectionBuilder(new DirectConnectionBuilder());
 
-        sqlDataGetter.addNewCbChance(new CbChance( "test CbChance", 1,
-                App.oldDateFormat.parse("01-07-2023"),
-                App.oldDateFormat.parse("31-07-2023"),
+        consoleSqlDataGetter.addNewCbChance(new CbChance( "test CbChance", 1,
+                LocalDate.parse("01-07-2023", CashDanceApp.oldDateFormatter),
+                LocalDate.parse("01-07-2023", CashDanceApp.oldDateFormatter),
                 1, 0.15));
     }
 }

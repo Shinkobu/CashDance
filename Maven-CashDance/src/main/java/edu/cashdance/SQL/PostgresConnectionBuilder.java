@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-import static edu.cashdance.App.logger;
+import static edu.cashdance.CashDanceApp.logger;
 
 public class PostgresConnectionBuilder {
     public static Connection getConnection() {

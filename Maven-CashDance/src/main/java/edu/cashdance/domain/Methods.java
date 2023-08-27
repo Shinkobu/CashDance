@@ -1,44 +1,40 @@
 package edu.cashdance.domain;
 
-import edu.cashdance.SQL.SqlDataGetter;
-import edu.cashdance.App;
+import edu.cashdance.CashDanceApp;
+import edu.cashdance.SQL.ConsoleSqlDataGetter;
 import edu.cashdance.old.Database;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.io.IOException;
-import java.text.ParseException;
-import java.util.Date;
-import java.util.HashMap;
+import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
 import java.util.Scanner;
-
-import static edu.cashdance.App.logger;
 
 
 public class Methods {
 
-//    private static final Logger logger = LogManager.getLogger(Methods.class.getName());
+    private static final Logger logger = LogManager.getLogger(Methods.class.getName());
 
-    public static Card createNewCard() {
+    public static BankCard createNewCard() {
 
         String name;
         String bankName;
 
         System.out.println("Название банка, например, Сбербанк: \n");
-        bankName = App.myScan.nextLine();
+        bankName = CashDanceApp.myScan.nextLine();
 
         System.out.println("Название карты, например, Карта сбера: \n");
-        name = App.myScan.nextLine();
+        name = CashDanceApp.myScan.nextLine();
 
-        Card newCard = new Card(name, bankName);
-        return newCard;
+        BankCard newBankCard = new BankCard(name, bankName);
+        return newBankCard;
     }
 
     public static CbCategory createNewCategory() {
 
         String name;
         System.out.println("Введите название категории: \n");
-        name = App.myScan.nextLine();
+        name = CashDanceApp.myScan.nextLine();
         CbCategory category = new CbCategory(name);
         return category;
     }
@@ -50,40 +46,40 @@ public class Methods {
 
         String name;
         int cardID;
-        Date startDate;
-        Date endDate;
+        LocalDate startDate;
+        LocalDate endDate;
         int categoryID;
         Double rate;
 
         String temp;
 
-        SqlDataGetter sqlDataGetter = new SqlDataGetter();
+        ConsoleSqlDataGetter consoleSqlDataGetter = new ConsoleSqlDataGetter();
 
         try {
 
             // TODO: 29.07.2023 Add while !hasnext...
             System.out.println("Введите название кэшбек шанса: \n");
-            name = App.myScan.nextLine();
+            name = CashDanceApp.myScan.nextLine();
 
             System.out.println("Выберите банковскую карту: \n");
-            cardID = sqlDataGetter.findCard();
+            cardID = consoleSqlDataGetter.findCard();
 
             System.out.println("Выберите категорию: \n");
-            categoryID = sqlDataGetter.findCategory();
+            categoryID = consoleSqlDataGetter.findCategory();
 
             System.out.println("Введите дату начала действия кэшбека в формате dd-mm-yyyy: \n");
-            temp = App.myScan.nextLine();
-            startDate = App.oldDateFormat.parse(temp);
+            temp = CashDanceApp.myScan.nextLine();
+            startDate = LocalDate.parse(temp,CashDanceApp.oldDateFormatter);
 
             System.out.println("Введите дату окончания действия кэшбека в формате dd-mm-yyyy: \n");
-            temp = App.myScan.nextLine();
-            endDate = App.oldDateFormat.parse(temp);
+            temp = CashDanceApp.myScan.nextLine();
+            endDate = LocalDate.parse(temp,CashDanceApp.oldDateFormatter);
 
             System.out.println("Введите % ставку кэшбека: \n");
-            rate = Double.valueOf(App.myScan.nextLine());
+            rate = Double.valueOf(CashDanceApp.myScan.nextLine());
 
 
-        } catch (ParseException e) {
+        } catch (DateTimeParseException e) {
             logger.info(e.getMessage() + e + " this is info");
             logger.debug("{}", () -> e + "this is debug");
             logger.error(e.getMessage() + e + " this is error");
@@ -96,7 +92,7 @@ public class Methods {
     }
 
 
-    public static Card findCardByName() {
+    public static BankCard findCardByName() {
 
         String tempName;
         try (Scanner myScan = new Scanner(System.in)) {
@@ -107,19 +103,19 @@ public class Methods {
             tempName = myScan.nextLine();
         }
 
-        SqlDataGetter sqlDataGetter = new SqlDataGetter();
+        ConsoleSqlDataGetter consoleSqlDataGetter = new ConsoleSqlDataGetter();
 
-        Card foundCard = sqlDataGetter.findByName(tempName);
+        BankCard foundBankCard = consoleSqlDataGetter.findByName(tempName);
 
-        if (foundCard != null) {
+        if (foundBankCard != null) {
             System.out.println("\nКарта " + tempName + " найдена!");
-            System.out.println(foundCard.toString());
-            int index = foundCard.getIndexInDb();
+            System.out.println(foundBankCard.toString());
+            int index = foundBankCard.getIndexInDb();
 
         } else {
             System.out.println("\nКарта " + tempName + " не найдена!");
         }
-        return foundCard;
+        return foundBankCard;
     }
 
 }

@@ -2,13 +2,13 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/java/edu/cashdance/App.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/edu/cashdance/CashDanceApp.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/edu/cashdance/SQL/ConsoleSqlDataGetter.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/edu/cashdance/SQL/PostgresConnectionBuilder.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/java/edu/cashdance/SQL/SqlDataGetter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/edu/cashdance/domain/CbUser.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/edu/cashdance/domain/ConsoleRepository.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/edu/cashdance/domain/Controller.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/edu/cashdance/domain/Methods.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/java/edu/cashdance/domain/Repository.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/java/edu/cashdance/domain/User.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/edu/cashdance/old/TestData.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/edu/cashdance/server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
