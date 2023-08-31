@@ -1,8 +1,8 @@
-import edu.cashdance.CashDanceApp;
-import edu.cashdance.SQL.DirectConnectionBuilder;
-import edu.cashdance.SQL.PostgresConnectionBuilder;
-import edu.cashdance.SQL.ConsoleSqlDataGetter;
-import edu.cashdance.domain.CbChance;
+import ru.cashdance.CashDanceApp;
+import ru.cashdance.SQL.DirectConnectionBuilder;
+import ru.cashdance.SQL.PostgresConnectionBuilder;
+import ru.cashdance.SQL.ConsoleSqlDataGetter;
+import ru.cashdance.domain.CbChance;
 import org.junit.Test;
 
 import java.io.IOException;

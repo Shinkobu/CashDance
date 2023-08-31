@@ -15,11 +15,75 @@
 
 
 <br><br><br>
-<a href="MyTestRequest">Response</a>
 
+Для корректной работы примеров ниже нужны библиотеки:
+<ul>
+    <li> javaee-api - this library contains HttpServlet </li>
+    <li>jersey-container - servlet set of classes to parse Http request</li>
+    <li>jersey-hk2 - to make annotations work properly </li>
+</ul>
+
+
+1) Тестовый запрос-кнопка. Просто возвращает текст. Обрабатывает сервлет web/test/TestResponseServlet <br><br>
+<a href="MyTestRequest">Response</a><br><br>
+2) Тестовое добавление карты в базу данных. Обрабатывает сервлет web/test/TestAddNewCardServlet <br><br>
 <form action="AddNewCard" method="get">
     CardName:<input type="text" name="cardName">
     <input type="submit" value="GO">
 </form>
+3) Тест простого Jersey сервлета. Возвращает только текст. Обрабатывает сервлет web/training/SimpleJerseyServlet <br><br>
+<a href="http://localhost:8080/Maven-CashDance-1.0/rest/simple">http://localhost:8080/Maven-CashDance-1.0/rest/simple</a><br><br>
+4) Тест простого Jersey сервлета. Получает параметры в запросе и возвращает текст. Обрабатывает сервлет web/training/JerseyServlet <br><br>
+<a href="http://localhost:8080/Maven-CashDance-1.0/rest/checkZero/999?name=Alex">http://localhost:8080/Maven-CashDance-1.0/rest/checkZero/999?name=Alex</a><br><br>
+
+Для корректной работы примеров ниже помимо прочих нужны библиотеки:
+<ul>
+    <li> jersey-media-moxy - to convert objects into .json or .xml - CONSUMES and PRODUCES </li>
+    <li> jaxb-api - to ensure right work of moxy (above)</li>
+</ul>
+
+5) Тест Jersey сервлета. Получает параметры в запросе, строит объект и возвращает данные в JSON. Обрабатывает сервлет web/training/JerseyServlet1 <br><br>
+<a href="http://localhost:8080/Maven-CashDance-1.0/rest/checkOne/SberCard?bankName=Sber">
+    http://localhost:8080/Maven-CashDance-1.0/rest/checkOne/SberCard?bankName=Sber</a><br><br>
+6) Тест Jersey сервлета. Получает параметры внутри кода, строит объект и возвращает данные в JSON. Обрабатывает сервлет web/training/JerseyServlet2 <br><br>
+<a href="http://localhost:8080/Maven-CashDance-1.0/rest/checkTwo">
+    http://localhost:8080/Maven-CashDance-1.0/rest/checkTwo</a><br><br>
+7) Тоже самое, но чуть сложнее - объект CBchance. Обрабатывает сервлет web/training/JerseyServlet3 <br><br>
+<a href="http://localhost:8080/Maven-CashDance-1.0/rest/checkThree">
+    http://localhost:8080/Maven-CashDance-1.0/rest/checkThree</a><br><br>
+8) Тест GET запроса через PostMan, возвращает эхо - объект CBchance. Обрабатывает сервлет web/training/JerseyServlet4 <br><br>
+<a href="http://localhost:8080/Maven-CashDance-1.0/rest/checkFour">
+    http://localhost:8080/Maven-CashDance-1.0/rest/checkFour</a><br><br>
+<a href="chrome-extension://coohjcphdfgbiolnekdpbcijmhambjff/index.html">
+    Postman</a><br><br>
+
+{
+"startDate": "01.07.2023",
+"endDate": "31.07.2023",
+"bankCard": {
+"bankName": "Сбербанк",
+"indexInDb": 0,
+"name": "Карта Сбера"
+},
+"card": {
+"bankName": "Сбербанк",
+"indexInDb": 0,
+"name": "Карта Сбера"
+},
+"category": {
+"name": "Аптеки"
+},
+"name": "тестовый шанс 1",
+"rate": 0.01
+}
+
+9) Тест GET запроса через PostMan, проверяет есть ли карта с указанным ID в базе данных. Принимает JSON возвращает JSON. Обрабатывает сервлет web/training/JerseyServlet5 <br><br>
+<a href="http://localhost:8080/Maven-CashDance-1.0/rest/checkFive">
+    http://localhost:8080/Maven-CashDance-1.0/rest/checkFive</a><br><br>
+<a href="chrome-extension://coohjcphdfgbiolnekdpbcijmhambjff/index.html">
+    Postman</a><br><br>
+{
+"index": 10
+}
 </body>
 </html>

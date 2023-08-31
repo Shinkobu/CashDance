@@ -1,4 +1,5 @@
-edu\cashdance\SimpleSocket.class
-edu\cashdance\SQL\ConsoleSqlDataGetterTest.class
-edu\cashdance\domain\MethodsTest.class
+ru\cashdance\SimpleSocket.class
+ru\cashdance\SQL\ConsoleSqlDataGetterTest.class
 MyClassTest.class
+ru\cashdance\domain\MethodsTest.class
+ru\cashdance\SQL\DirectConnectionBuilder.class
